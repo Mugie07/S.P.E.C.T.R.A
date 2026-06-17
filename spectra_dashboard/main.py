@@ -1142,6 +1142,21 @@ def delete_staged_image(path: Path, preserve_outputs: bool = True) -> None:
     log(f"Deleted staged image: {path.name}")
 
 
+def running_on_streamlit_cloud() -> bool:
+    return bool(os.environ.get("STREAMLIT_SHARING") or os.environ.get("STREAMLIT_CLOUD"))
+
+
+def missing_artifact_message(source: str, path: Path) -> str:
+    rel_path = path.relative_to(PROJECT_ROOT)
+    if running_on_streamlit_cloud() and path.is_relative_to(DATA_DIR):
+        return (
+            f"{source} is a local demo artifact that is not bundled with the cloud deployment: {rel_path}. "
+            "The large data folder is kept out of GitHub so the app can deploy on the free tier. "
+            "Use Synthetic preview in the cloud, or run the dashboard locally to inspect this file."
+        )
+    return f"{source} is not available yet: {rel_path}"
+
+
 def load_cloud(path: Path, sample_limit: int = 120000, use_rgb: bool = False) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray | list[str]] | None:
     if not path.exists():
         return None
@@ -1931,7 +1946,7 @@ def render_viewer(metrics: dict[str, int]) -> None:
     open3d_style = source == "3D reconstruction image"
     cloud = load_cloud(path, use_rgb=open3d_style)
     if cloud is None:
-        st.warning(f"{source} is not available yet: {path.relative_to(PROJECT_ROOT)}")
+        st.warning(missing_artifact_message(source, path))
         return
 
     x, y, z, c = cloud
