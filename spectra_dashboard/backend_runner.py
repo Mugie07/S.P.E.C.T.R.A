@@ -115,6 +115,16 @@ def now() -> str:
     return time.strftime("%Y-%m-%d %H:%M:%S")
 
 
+def preferred_backend_python() -> str:
+    configured = os.environ.get("SPECTRA_BACKEND_PYTHON")
+    if configured and Path(configured).exists():
+        return configured
+    local_reconstruction_python = Path(r"C:\Project_anaconda\envs\reconstruction\python.exe")
+    if os.name == "nt" and local_reconstruction_python.exists():
+        return str(local_reconstruction_python)
+    return sys.executable
+
+
 def append_log(message: str) -> None:
     with LIVE_LOG.open("a", encoding="utf-8") as handle:
         handle.write(message.rstrip() + "\n")
@@ -193,7 +203,7 @@ def run_stage(stage: Stage, status: dict) -> bool:
 
     command = list(command_tuple)
     if command[0] == "python":
-        command[0] = sys.executable
+        command[0] = preferred_backend_python()
 
     env = {
         **os.environ,
@@ -266,7 +276,8 @@ def main() -> None:
     status = base_status(stage_keys, args.mode, args.quality_mode, args.scene_profile, args.zoom_profile)
     write_status(status)
     append_log(f"[{now()}] Backend runner PID {os.getpid()} started in {args.mode} mode.")
-    append_log(f"[{now()}] Python executable: {sys.executable}")
+    append_log(f"[{now()}] Runner executable: {sys.executable}")
+    append_log(f"[{now()}] Stage executable: {preferred_backend_python()}")
     try:
         import torch
 

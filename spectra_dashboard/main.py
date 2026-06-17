@@ -709,6 +709,16 @@ def current_zoom_profile() -> str:
     return st.session_state.get("zoom_profile", "1x")
 
 
+def preferred_backend_python() -> str:
+    configured = os.environ.get("SPECTRA_BACKEND_PYTHON")
+    if configured and Path(configured).exists():
+        return configured
+    local_reconstruction_python = Path(r"C:\Project_anaconda\envs\reconstruction\python.exe")
+    if os.name == "nt" and local_reconstruction_python.exists():
+        return str(local_reconstruction_python)
+    return sys.executable
+
+
 def stage_command(stage: Stage) -> tuple[str, ...]:
     if stage.key == "selection":
         max_frames = "60" if current_scene_profile() == "lobby" else "24"
@@ -815,7 +825,8 @@ def start_backend_job(mode: str, stage_keys: list[str] | None = None) -> None:
         ),
         encoding="utf-8",
     )
-    command = [sys.executable, str(RUNNER_SCRIPT), "--mode", mode]
+    backend_python = preferred_backend_python()
+    command = [backend_python, str(RUNNER_SCRIPT), "--mode", mode]
     command.extend(["--quality_mode", quality_mode])
     command.extend(["--scene_profile", scene_profile, "--zoom_profile", zoom_profile])
     if mode == "selected":
@@ -825,6 +836,7 @@ def start_backend_job(mode: str, stage_keys: list[str] | None = None) -> None:
         process = subprocess.Popen(
             command,
             cwd=str(PROJECT_ROOT),
+            env={**os.environ, "SPECTRA_BACKEND_PYTHON": backend_python},
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
             creationflags=creationflags,
