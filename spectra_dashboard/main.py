@@ -1736,7 +1736,7 @@ def render_upload_console(metrics: dict[str, int], key_prefix: str = "main") -> 
                 cols = st.columns(3)
                 for col, path in zip(cols, staged_images[row_start:row_start + 3]):
                     with col:
-                        st.image(str(path), caption=f"{path.name} - {fmt_size(path)}", use_container_width=True)
+                        st.image(str(path), caption=f"{path.name} - {fmt_size(path)}", use_column_width=True)
                         if st.button("Delete", key=f"{key_prefix}_delete_{path.name}", disabled=is_live, use_container_width=True):
                             delete_staged_image(path, preserve_outputs=st.session_state["preserve_outputs"])
                             st.session_state["ui_notice"] = f"Deleted {path.name} from data/raw_phone."
@@ -1838,7 +1838,7 @@ def render_dataset(metrics: dict[str, int]) -> None:
                 cols = st.columns(3)
                 for col, path in zip(cols, raw_images[row_start:row_start + 3]):
                     with col:
-                        st.image(str(path), caption=f"{path.name} - {fmt_size(path)}", use_container_width=True)
+                        st.image(str(path), caption=f"{path.name} - {fmt_size(path)}", use_column_width=True)
 
 
 def render_pipeline(metrics: dict[str, int]) -> None:
