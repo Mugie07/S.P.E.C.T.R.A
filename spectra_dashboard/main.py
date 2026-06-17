@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import io
+import inspect
 import json
 import logging
 import os
@@ -1387,6 +1388,14 @@ def safe_dataframe(data: pd.DataFrame, **kwargs) -> None:
         st.markdown(data.to_html(index=not hide_index, escape=True), unsafe_allow_html=True)
 
 
+def responsive_image(image: str, caption: str | None = None) -> None:
+    image_params = inspect.signature(st.image).parameters
+    if "use_container_width" in image_params:
+        st.image(image, caption=caption, use_container_width=True)
+    else:
+        st.image(image, caption=caption, use_column_width=True)
+
+
 def file_card(title: str, items: list[tuple[str, str]]) -> None:
     lines = "".join(
         f'<div class="file-line"><span>{label}</span><span class="mono">{value}</span></div>'
@@ -1770,7 +1779,7 @@ def render_upload_console(metrics: dict[str, int], key_prefix: str = "main") -> 
                 cols = st.columns(3)
                 for col, path in zip(cols, staged_images[row_start:row_start + 3]):
                     with col:
-                        st.image(str(path), caption=f"{path.name} - {fmt_size(path)}", use_column_width=True)
+                        responsive_image(str(path), caption=f"{path.name} - {fmt_size(path)}")
                         if st.button("Delete", key=f"{key_prefix}_delete_{path.name}", disabled=is_live, use_container_width=True):
                             delete_staged_image(path, preserve_outputs=st.session_state["preserve_outputs"])
                             st.session_state["ui_notice"] = f"Deleted {path.name} from data/raw_phone."
@@ -1872,7 +1881,7 @@ def render_dataset(metrics: dict[str, int]) -> None:
                 cols = st.columns(3)
                 for col, path in zip(cols, raw_images[row_start:row_start + 3]):
                     with col:
-                        st.image(str(path), caption=f"{path.name} - {fmt_size(path)}", use_column_width=True)
+                        responsive_image(str(path), caption=f"{path.name} - {fmt_size(path)}")
 
 
 def render_pipeline(metrics: dict[str, int]) -> None:
@@ -2151,7 +2160,7 @@ def render_outputs(metrics: dict[str, int]) -> None:
             cols = st.columns(3)
             for index, path in enumerate(depth_pngs[:preview_count]):
                 with cols[index % 3]:
-                    st.image(str(path), caption=path.name, use_column_width=True)
+                    responsive_image(str(path), caption=path.name)
         else:
             st.info("Depth previews will appear here after the Depth Estimation stage.")
 
@@ -2176,7 +2185,7 @@ def render_outputs(metrics: dict[str, int]) -> None:
                 preview_cols = st.columns(4)
                 for index, path in enumerate(files[:8]):
                     with preview_cols[index % 4]:
-                        st.image(str(path), caption=path.name, use_column_width=True)
+                        responsive_image(str(path), caption=path.name)
 
     with tabs[3]:
         st.markdown("#### Gaussian Splatting export package")
