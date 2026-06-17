@@ -33,7 +33,7 @@ Python 3.10 is recommended because this project pins `open3d==0.17.0`, which is 
 
 - `requirements.txt` declares the cloud-safe Python packages needed to launch the dashboard.
 - `requirements-local.txt` keeps the heavier local reconstruction dependencies such as Open3D, Torch, and Transformers.
-- `packages.txt` declares Linux system packages used by OpenCV.
+- `packages.txt` is intentionally empty because the cloud build uses `opencv-python-headless` and does not need GUI/OpenCV system packages.
 - The large local `data/` directory is intentionally ignored by Git.
 - On Streamlit Cloud, the app will start with empty runtime data folders and can still show the dashboard shell, reports, pipeline controls, and any generated files produced during that cloud session.
 - Heavy reconstruction stages may be slower or resource-limited on the free tier.
