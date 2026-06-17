@@ -1194,7 +1194,7 @@ def missing_artifact_message(source: str, path: Path) -> str:
     return f"{source} is not available yet: {rel_path}"
 
 
-def load_cloud(path: Path, sample_limit: int = 120000, use_rgb: bool = False) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray | list[str]] | None:
+def load_cloud(path: Path, sample_limit: int = 80000, use_rgb: bool = False) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray | list[str]] | None:
     if not path.exists():
         return None
     try:
@@ -1307,7 +1307,7 @@ def cloud_figure(x: np.ndarray, y: np.ndarray, z: np.ndarray, c: np.ndarray | li
     bg = "#05070b" if dark else "#ffffff"
     grid = "#1f2a3a" if dark else "#d8e1ec"
     tick = "#dbeafe" if dark else "#172033"
-    marker = dict(size=2.0 if isinstance(c, list) else 1.4, color=c, opacity=0.92, showscale=False)
+    marker = dict(size=1.8 if isinstance(c, list) else 1.35, color=c, opacity=0.96, showscale=False)
     if not (isinstance(c, list) and c and isinstance(c[0], str)):
         marker["colorscale"] = "Viridis"
     fig = go.Figure(
@@ -1322,11 +1322,12 @@ def cloud_figure(x: np.ndarray, y: np.ndarray, z: np.ndarray, c: np.ndarray | li
         ]
     )
     axis = dict(
-        showgrid=not dark,
+        showgrid=False if dark else True,
         gridcolor=grid,
-        zeroline=True,
+        zeroline=False if dark else True,
         zerolinecolor=grid,
-        showticklabels=not dark,
+        showticklabels=False if dark else True,
+        visible=False if dark else True,
         tickfont=dict(color=tick, size=10),
         title=dict(font=dict(color=tick, size=11)),
         backgroundcolor=bg,
@@ -1339,13 +1340,13 @@ def cloud_figure(x: np.ndarray, y: np.ndarray, z: np.ndarray, c: np.ndarray | li
             zaxis=axis,
             bgcolor=bg,
             aspectmode="data",
-            camera=dict(eye=dict(x=1.45, y=-1.65, z=1.05), center=dict(x=0, y=0, z=-0.1)),
+            camera=dict(eye=dict(x=1.25, y=-1.35, z=0.85), center=dict(x=0, y=0, z=-0.08)),
         ),
         paper_bgcolor=bg,
         plot_bgcolor=bg,
         font=dict(color=tick),
         margin=dict(l=0, r=0, t=40, b=0),
-        height=560,
+        height=620 if dark else 560,
     )
     return fig
 
@@ -2062,8 +2063,8 @@ def render_viewer(metrics: dict[str, int]) -> None:
         return
 
     path = source_map[source]
-    open3d_style = source == "3D reconstruction image"
-    cloud = load_cloud(path, use_rgb=open3d_style)
+    open3d_style = True
+    cloud = load_cloud(path, use_rgb=True)
     if cloud is None:
         st.warning(missing_artifact_message(source, path))
         return
@@ -2098,8 +2099,8 @@ def render_outputs(metrics: dict[str, int]) -> None:
             selected_label = st.radio("Show stage", labels, horizontal=True, key="journey_stage")
             selected_label, selected_path, selected_desc = next(item for item in ready_journey if item[0] == selected_label)
             st.caption(selected_desc)
-            open3d_style = selected_label == "2. 3D reconstruction image"
-            cloud = load_cloud(selected_path, use_rgb=open3d_style)
+            open3d_style = True
+            cloud = load_cloud(selected_path, use_rgb=True)
             if cloud:
                 x, y, z, c = cloud
                 st.plotly_chart(cloud_figure(x, y, z, c, selected_label, dark=open3d_style), use_container_width=True)
