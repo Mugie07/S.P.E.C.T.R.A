@@ -1,0 +1,3919 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SPECTRA_FINAL_60_PAGE_REPORT</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#s.p.e.c.t.r.a-3d-reconstruction-dashboard-project-report"
+id="toc-s.p.e.c.t.r.a-3d-reconstruction-dashboard-project-report"><span
+class="toc-section-number">1</span> S.P.E.C.T.R.A 3D Reconstruction
+Dashboard Project Report</a>
+<ul>
+<li><a href="#declaration" id="toc-declaration"><span
+class="toc-section-number">1.1</span> Declaration</a></li>
+<li><a href="#acknowledgements" id="toc-acknowledgements"><span
+class="toc-section-number">1.2</span> Acknowledgements</a></li>
+<li><a href="#abstract" id="toc-abstract"><span
+class="toc-section-number">1.3</span> Abstract</a></li>
+<li><a href="#list-of-abbreviations"
+id="toc-list-of-abbreviations"><span
+class="toc-section-number">1.4</span> List of Abbreviations</a></li>
+<li><a href="#list-of-figures" id="toc-list-of-figures"><span
+class="toc-section-number">1.5</span> List of Figures</a></li>
+<li><a href="#table-of-contents" id="toc-table-of-contents"><span
+class="toc-section-number">1.6</span> Table of Contents</a></li>
+</ul></li>
+<li><a href="#chapter-1-introduction"
+id="toc-chapter-1-introduction"><span
+class="toc-section-number">2</span> Chapter 1: Introduction</a>
+<ul>
+<li><a href="#introduction" id="toc-introduction"><span
+class="toc-section-number">2.1</span> 1.1 Introduction</a></li>
+<li><a href="#background" id="toc-background"><span
+class="toc-section-number">2.2</span> 1.2 Background</a></li>
+<li><a href="#aim-and-objectives" id="toc-aim-and-objectives"><span
+class="toc-section-number">2.3</span> 1.3 Aim and Objectives</a>
+<ul>
+<li><a href="#main-aim" id="toc-main-aim"><span
+class="toc-section-number">2.3.1</span> 1.3.1 Main Aim</a></li>
+<li><a href="#specific-objectives" id="toc-specific-objectives"><span
+class="toc-section-number">2.3.2</span> 1.3.2 Specific
+Objectives</a></li>
+</ul></li>
+<li><a href="#problem-statement" id="toc-problem-statement"><span
+class="toc-section-number">2.4</span> 1.4 Problem Statement</a></li>
+<li><a href="#scope-of-the-project" id="toc-scope-of-the-project"><span
+class="toc-section-number">2.5</span> 1.5 Scope of the Project</a></li>
+<li><a href="#project-architecture" id="toc-project-architecture"><span
+class="toc-section-number">2.6</span> 1.6 Project Architecture</a></li>
+</ul></li>
+<li><a href="#chapter-2-literature-review"
+id="toc-chapter-2-literature-review"><span
+class="toc-section-number">3</span> Chapter 2: Literature Review</a>
+<ul>
+<li><a href="#introduction-1" id="toc-introduction-1"><span
+class="toc-section-number">3.1</span> 2.1 Introduction</a></li>
+<li><a href="#foundations-of-3d-reconstruction"
+id="toc-foundations-of-3d-reconstruction"><span
+class="toc-section-number">3.2</span> 2.2 Foundations of 3D
+Reconstruction</a></li>
+<li><a href="#photogrammetry-and-smartphone-based-capture"
+id="toc-photogrammetry-and-smartphone-based-capture"><span
+class="toc-section-number">3.3</span> 2.3 Photogrammetry and
+Smartphone-Based Capture</a></li>
+<li><a href="#structure-from-motion"
+id="toc-structure-from-motion"><span
+class="toc-section-number">3.4</span> 2.4 Structure from Motion</a></li>
+<li><a href="#orb-feature-detection-and-matching"
+id="toc-orb-feature-detection-and-matching"><span
+class="toc-section-number">3.5</span> 2.5 ORB Feature Detection and
+Matching</a></li>
+<li><a href="#camera-calibration-and-intrinsic-parameters"
+id="toc-camera-calibration-and-intrinsic-parameters"><span
+class="toc-section-number">3.6</span> 2.6 Camera Calibration and
+Intrinsic Parameters</a></li>
+<li><a href="#monocular-depth-estimation"
+id="toc-monocular-depth-estimation"><span
+class="toc-section-number">3.7</span> 2.7 Monocular Depth
+Estimation</a></li>
+<li><a href="#point-cloud-generation-and-fusion"
+id="toc-point-cloud-generation-and-fusion"><span
+class="toc-section-number">3.8</span> 2.8 Point Cloud Generation and
+Fusion</a></li>
+<li><a href="#point-cloud-cleaning-and-clustering"
+id="toc-point-cloud-cleaning-and-clustering"><span
+class="toc-section-number">3.9</span> 2.9 Point Cloud Cleaning and
+Clustering</a></li>
+<li><a href="#mesh-reconstruction-and-surface-generation"
+id="toc-mesh-reconstruction-and-surface-generation"><span
+class="toc-section-number">3.10</span> 2.10 Mesh Reconstruction and
+Surface Generation</a></li>
+<li><a href="#neural-rendering-and-gaussian-splatting"
+id="toc-neural-rendering-and-gaussian-splatting"><span
+class="toc-section-number">3.11</span> 2.11 Neural Rendering and
+Gaussian Splatting</a></li>
+<li><a href="#visualization-and-interaction-layers"
+id="toc-visualization-and-interaction-layers"><span
+class="toc-section-number">3.12</span> 2.12 Visualization and
+Interaction Layers</a></li>
+<li><a href="#african-and-ugandan-context"
+id="toc-african-and-ugandan-context"><span
+class="toc-section-number">3.13</span> 2.13 African and Ugandan
+Context</a></li>
+<li><a href="#related-systems-and-tools"
+id="toc-related-systems-and-tools"><span
+class="toc-section-number">3.14</span> 2.14 Related Systems and
+Tools</a></li>
+<li><a href="#literature-review-summary-table"
+id="toc-literature-review-summary-table"><span
+class="toc-section-number">3.15</span> 2.15 Literature Review Summary
+Table</a></li>
+<li><a href="#conceptual-framework" id="toc-conceptual-framework"><span
+class="toc-section-number">3.16</span> 2.16 Conceptual
+Framework</a></li>
+<li><a href="#critical-review" id="toc-critical-review"><span
+class="toc-section-number">3.17</span> 2.17 Critical Review</a></li>
+<li><a href="#literature-gap" id="toc-literature-gap"><span
+class="toc-section-number">3.18</span> 2.18 Literature Gap</a></li>
+<li><a href="#chapter-summary" id="toc-chapter-summary"><span
+class="toc-section-number">3.19</span> 2.19 Chapter Summary</a></li>
+</ul></li>
+<li><a href="#chapter-3-methodology"
+id="toc-chapter-3-methodology"><span class="toc-section-number">4</span>
+Chapter 3: Methodology</a>
+<ul>
+<li><a href="#methodology-overview" id="toc-methodology-overview"><span
+class="toc-section-number">4.1</span> 3.1 Methodology Overview</a></li>
+<li><a href="#development-environment"
+id="toc-development-environment"><span
+class="toc-section-number">4.2</span> 3.2 Development
+Environment</a></li>
+<li><a href="#dataset-and-resource-preparation"
+id="toc-dataset-and-resource-preparation"><span
+class="toc-section-number">4.3</span> 3.3 Dataset and Resource
+Preparation</a></li>
+<li><a href="#dashboard-design-method"
+id="toc-dashboard-design-method"><span
+class="toc-section-number">4.4</span> 3.4 Dashboard Design
+Method</a></li>
+<li><a href="#stage-1-smart-frame-selection"
+id="toc-stage-1-smart-frame-selection"><span
+class="toc-section-number">4.5</span> 3.5 Stage 1: Smart Frame
+Selection</a></li>
+<li><a href="#stage-2-keyframe-preparation"
+id="toc-stage-2-keyframe-preparation"><span
+class="toc-section-number">4.6</span> 3.6 Stage 2: Keyframe
+Preparation</a></li>
+<li><a href="#stage-3-depth-estimation"
+id="toc-stage-3-depth-estimation"><span
+class="toc-section-number">4.7</span> 3.7 Stage 3: Depth
+Estimation</a></li>
+<li><a href="#stage-4-sparse-reconstruction"
+id="toc-stage-4-sparse-reconstruction"><span
+class="toc-section-number">4.8</span> 3.8 Stage 4: Sparse
+Reconstruction</a></li>
+<li><a href="#camera-calibration-method"
+id="toc-camera-calibration-method"><span
+class="toc-section-number">4.9</span> 3.9 Camera Calibration
+Method</a></li>
+<li><a href="#stage-5-dense-depth-fusion"
+id="toc-stage-5-dense-depth-fusion"><span
+class="toc-section-number">4.10</span> 3.10 Stage 5: Dense Depth
+Fusion</a></li>
+<li><a href="#stage-6-noise-cleanup"
+id="toc-stage-6-noise-cleanup"><span
+class="toc-section-number">4.11</span> 3.11 Stage 6: Noise
+Cleanup</a></li>
+<li><a href="#stage-7-surface-meshing"
+id="toc-stage-7-surface-meshing"><span
+class="toc-section-number">4.12</span> 3.12 Stage 7: Surface
+Meshing</a></li>
+<li><a href="#stage-8-evaluation" id="toc-stage-8-evaluation"><span
+class="toc-section-number">4.13</span> 3.13 Stage 8: Evaluation</a></li>
+<li><a href="#stage-9-gaussian-splatting-export"
+id="toc-stage-9-gaussian-splatting-export"><span
+class="toc-section-number">4.14</span> 3.14 Stage 9: Gaussian Splatting
+Export</a></li>
+<li><a href="#dashboard-pipeline-definition"
+id="toc-dashboard-pipeline-definition"><span
+class="toc-section-number">4.15</span> 3.15 Dashboard Pipeline
+Definition</a></li>
+<li><a href="#visualization-method" id="toc-visualization-method"><span
+class="toc-section-number">4.16</span> 3.16 Visualization
+Method</a></li>
+<li><a href="#metrics-method" id="toc-metrics-method"><span
+class="toc-section-number">4.17</span> 3.17 Metrics Method</a></li>
+<li><a href="#export-method" id="toc-export-method"><span
+class="toc-section-number">4.18</span> 3.18 Export Method</a></li>
+<li><a href="#testing-method" id="toc-testing-method"><span
+class="toc-section-number">4.19</span> 3.19 Testing Method</a></li>
+<li><a href="#resources-required" id="toc-resources-required"><span
+class="toc-section-number">4.20</span> 3.20 Resources Required</a>
+<ul>
+<li><a href="#hardware-resources" id="toc-hardware-resources"><span
+class="toc-section-number">4.20.1</span> Hardware Resources</a></li>
+<li><a href="#software-resources" id="toc-software-resources"><span
+class="toc-section-number">4.20.2</span> Software Resources</a></li>
+<li><a href="#data-resources" id="toc-data-resources"><span
+class="toc-section-number">4.20.3</span> Data Resources</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#chapter-4-results-and-discussion"
+id="toc-chapter-4-results-and-discussion"><span
+class="toc-section-number">5</span> Chapter 4: Results and
+Discussion</a>
+<ul>
+<li><a href="#results-overview" id="toc-results-overview"><span
+class="toc-section-number">5.1</span> 4.1 Results Overview</a></li>
+<li><a href="#pipeline-timing-results"
+id="toc-pipeline-timing-results"><span
+class="toc-section-number">5.2</span> 4.2 Pipeline Timing
+Results</a></li>
+<li><a href="#real-reconstruction-output-snapshot"
+id="toc-real-reconstruction-output-snapshot"><span
+class="toc-section-number">5.3</span> 4.3 Real Reconstruction Output
+Snapshot</a></li>
+<li><a href="#quality-metrics-discussion"
+id="toc-quality-metrics-discussion"><span
+class="toc-section-number">5.4</span> 4.4 Quality Metrics
+Discussion</a></li>
+<li><a href="#sparse-vs-dense-output"
+id="toc-sparse-vs-dense-output"><span
+class="toc-section-number">5.5</span> 4.5 Sparse vs Dense
+Output</a></li>
+<li><a href="#raw-vs-cleaned-output"
+id="toc-raw-vs-cleaned-output"><span
+class="toc-section-number">5.6</span> 4.6 Raw vs Cleaned Output</a></li>
+<li><a href="#mesh-results" id="toc-mesh-results"><span
+class="toc-section-number">5.7</span> 4.7 Mesh Results</a></li>
+<li><a href="#synthetic-baseline-results"
+id="toc-synthetic-baseline-results"><span
+class="toc-section-number">5.8</span> 4.8 Synthetic Baseline
+Results</a></li>
+<li><a href="#synthetic-vs-real-discussion"
+id="toc-synthetic-vs-real-discussion"><span
+class="toc-section-number">5.9</span> 4.9 Synthetic vs Real
+Discussion</a></li>
+<li><a href="#export-readiness-results"
+id="toc-export-readiness-results"><span
+class="toc-section-number">5.10</span> 4.10 Export Readiness
+Results</a></li>
+<li><a href="#dashboard-results" id="toc-dashboard-results"><span
+class="toc-section-number">5.11</span> 4.11 Dashboard Results</a></li>
+<li><a href="#dependency-discussion"
+id="toc-dependency-discussion"><span
+class="toc-section-number">5.12</span> 4.12 Dependency
+Discussion</a></li>
+<li><a href="#strengths-of-the-project"
+id="toc-strengths-of-the-project"><span
+class="toc-section-number">5.13</span> 4.13 Strengths of the
+Project</a></li>
+<li><a href="#limitations-of-the-project"
+id="toc-limitations-of-the-project"><span
+class="toc-section-number">5.14</span> 4.14 Limitations of the
+Project</a></li>
+<li><a href="#risks-and-mitigation" id="toc-risks-and-mitigation"><span
+class="toc-section-number">5.15</span> 4.15 Risks and
+Mitigation</a></li>
+<li><a href="#acceptance-criteria-results"
+id="toc-acceptance-criteria-results"><span
+class="toc-section-number">5.16</span> 4.16 Acceptance Criteria
+Results</a></li>
+<li><a href="#discussion-of-supervisor-requirements"
+id="toc-discussion-of-supervisor-requirements"><span
+class="toc-section-number">5.17</span> 4.17 Discussion of Supervisor
+Requirements</a></li>
+<li><a href="#overall-discussion" id="toc-overall-discussion"><span
+class="toc-section-number">5.18</span> 4.18 Overall Discussion</a></li>
+</ul></li>
+<li><a href="#chapter-5-conclusion-and-future-enhancement"
+id="toc-chapter-5-conclusion-and-future-enhancement"><span
+class="toc-section-number">6</span> Chapter 5: Conclusion and Future
+Enhancement</a>
+<ul>
+<li><a href="#conclusion" id="toc-conclusion"><span
+class="toc-section-number">6.1</span> 5.1 Conclusion</a></li>
+<li><a href="#contributions-of-the-project"
+id="toc-contributions-of-the-project"><span
+class="toc-section-number">6.2</span> 5.2 Contributions of the
+Project</a></li>
+<li><a href="#future-enhancements" id="toc-future-enhancements"><span
+class="toc-section-number">6.3</span> 5.3 Future Enhancements</a></li>
+<li><a href="#proposed-technical-improvements"
+id="toc-proposed-technical-improvements"><span
+class="toc-section-number">6.4</span> 5.4 Proposed Technical
+Improvements</a>
+<ul>
+<li><a href="#evaluation-improvements"
+id="toc-evaluation-improvements"><span
+class="toc-section-number">6.4.1</span> 5.4.1 Evaluation
+Improvements</a></li>
+<li><a href="#dependency-improvements"
+id="toc-dependency-improvements"><span
+class="toc-section-number">6.4.2</span> 5.4.2 Dependency
+Improvements</a></li>
+<li><a href="#user-experience-improvements"
+id="toc-user-experience-improvements"><span
+class="toc-section-number">6.4.3</span> 5.4.3 User Experience
+Improvements</a></li>
+</ul></li>
+<li><a href="#final-recommendation" id="toc-final-recommendation"><span
+class="toc-section-number">6.5</span> 5.5 Final Recommendation</a></li>
+</ul></li>
+<li><a href="#references" id="toc-references"><span
+class="toc-section-number">7</span> References</a></li>
+<li><a href="#appendices" id="toc-appendices"><span
+class="toc-section-number">8</span> Appendices</a>
+<ul>
+<li><a href="#appendix-a-mock-evaluation-record"
+id="toc-appendix-a-mock-evaluation-record"><span
+class="toc-section-number">8.1</span> Appendix A: Mock Evaluation
+Record</a></li>
+<li><a href="#appendix-b-backend-commands"
+id="toc-appendix-b-backend-commands"><span
+class="toc-section-number">8.2</span> Appendix B: Backend
+Commands</a></li>
+<li><a href="#appendix-c-main-output-files"
+id="toc-appendix-c-main-output-files"><span
+class="toc-section-number">8.3</span> Appendix C: Main Output
+Files</a></li>
+<li><a href="#appendix-d-recommended-full-requirements"
+id="toc-appendix-d-recommended-full-requirements"><span
+class="toc-section-number">8.4</span> Appendix D: Recommended Full
+Requirements</a></li>
+<li><a href="#appendix-e-gaussian-splatting-environment-summary"
+id="toc-appendix-e-gaussian-splatting-environment-summary"><span
+class="toc-section-number">8.5</span> Appendix E: Gaussian Splatting
+Environment Summary</a></li>
+<li><a href="#appendix-f-capture-guidelines-for-better-reconstruction"
+id="toc-appendix-f-capture-guidelines-for-better-reconstruction"><span
+class="toc-section-number">8.6</span> Appendix F: Capture Guidelines for
+Better Reconstruction</a></li>
+<li><a href="#appendix-g-detailed-architecture-diagram"
+id="toc-appendix-g-detailed-architecture-diagram"><span
+class="toc-section-number">8.7</span> Appendix G: Detailed Architecture
+Diagram</a></li>
+<li><a href="#appendix-h-evaluation-dashboard-model"
+id="toc-appendix-h-evaluation-dashboard-model"><span
+class="toc-section-number">8.8</span> Appendix H: Evaluation Dashboard
+Model</a></li>
+<li><a href="#appendix-i-synthetic-baseline-json-source"
+id="toc-appendix-i-synthetic-baseline-json-source"><span
+class="toc-section-number">8.9</span> Appendix I: Synthetic Baseline
+JSON Source</a></li>
+<li><a href="#appendix-j-file-mapping-table"
+id="toc-appendix-j-file-mapping-table"><span
+class="toc-section-number">8.10</span> Appendix J: File Mapping
+Table</a></li>
+<li><a href="#appendix-k-sample-final-evaluation-checklist"
+id="toc-appendix-k-sample-final-evaluation-checklist"><span
+class="toc-section-number">8.11</span> Appendix K: Sample Final
+Evaluation Checklist</a></li>
+<li><a href="#appendix-l-proposed-evaluation-json-schema"
+id="toc-appendix-l-proposed-evaluation-json-schema"><span
+class="toc-section-number">8.12</span> Appendix L: Proposed Evaluation
+JSON Schema</a></li>
+<li><a href="#appendix-m-report-conversion-notes"
+id="toc-appendix-m-report-conversion-notes"><span
+class="toc-section-number">8.13</span> Appendix M: Report Conversion
+Notes</a></li>
+<li><a href="#appendix-n-final-notes-for-submission"
+id="toc-appendix-n-final-notes-for-submission"><span
+class="toc-section-number">8.14</span> Appendix N: Final Notes for
+Submission</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 data-number="1"
+id="s.p.e.c.t.r.a-3d-reconstruction-dashboard-project-report"><span
+class="header-section-number">1</span> S.P.E.C.T.R.A 3D Reconstruction
+Dashboard Project Report</h1>
+<p><strong>Project title:</strong> S.P.E.C.T.R.A: A Smartphone-Based 3D
+Reconstruction Dashboard for Point Cloud, Mesh, and Gaussian Splatting
+Export</p>
+<p><strong>Opening statement:</strong><br />
+S.P.E.C.T.R.A is a Python and Streamlit based 3D reconstruction
+dashboard that converts overlapping smartphone images into visual 3D
+outputs. The system selects usable frames, estimates monocular depth,
+performs sparse camera pose recovery, fuses depth into dense point
+clouds, cleans noisy geometry, reconstructs a mesh, evaluates results,
+and prepares outputs for inspection or Gaussian Splatting workflows.</p>
+<p><strong>Student:</strong> Mugwanya Osbert<br />
+<strong>Institution:</strong> ISBAT University, Faculty of ICT<br />
+<strong>Supervisor:</strong> Mr. Umesh Kumar<br />
+<strong>Program:</strong> S.P.E.C.T.R.A 3D Reconstruction
+Dashboard<br />
+<strong>Entry point:</strong>
+<code>spectra_dashboard/main.py</code><br />
+<strong>Report date:</strong> 26 May 2026</p>
+<p><strong>Page i</strong></p>
+<h2 data-number="1.1" id="declaration"><span
+class="header-section-number">1.1</span> Declaration</h2>
+<p>I declare that this project report, titled <strong>S.P.E.C.T.R.A: A
+Smartphone-Based 3D Reconstruction Dashboard for Point Cloud, Mesh, and
+Gaussian Splatting Export</strong>, is my original work except where
+scholarly sources, software libraries, open-source tools, and project
+files are acknowledged. The design, implementation, testing, and
+evaluation presented in this report describe the current S.P.E.C.T.R.A
+project contained in the <code>recon3d</code> workspace.</p>
+<p>The report uses mock and synthetic evaluation values where explicitly
+stated. Such values are intended for demonstration, supervisor review,
+interface testing, and report preparation. Final academic evaluation
+should replace mock values with measured values from controlled
+dashboard runs, external reconstruction benchmarks, and direct visual
+inspection in tools such as MeshLab, CloudCompare, Open3D, or
+Blender.</p>
+<p><strong>Student signature:</strong> ___________________________</p>
+<p><strong>Date:</strong> ___________________________</p>
+<p><strong>Page ii</strong></p>
+<h2 data-number="1.2" id="acknowledgements"><span
+class="header-section-number">1.2</span> Acknowledgements</h2>
+<p>I acknowledge the guidance of my supervisor, Mr. Umesh Kumar, for
+shaping the direction of the project and emphasizing a complete
+evaluation report covering architecture, dependencies, research
+background, methodology, results, and future work. I also acknowledge
+ISBAT University and the Faculty of ICT for providing the academic
+environment in which this project was developed.</p>
+<p>This project also builds on widely used open-source and research
+tools in computer vision and 3D reconstruction. Streamlit supports the
+interactive dashboard interface; OpenCV supports image processing and
+feature extraction; Open3D supports point cloud, mesh, and visualization
+operations; NumPy supports numerical computation; Plotly supports
+browser-based 3D rendering; PyTorch and Hugging Face Transformers
+support deep learning based depth estimation; and the GraphDECO Gaussian
+Splatting codebase provides a neural rendering export target.</p>
+<p>I further acknowledge the research community whose work in Structure
+from Motion, Multi-View Stereo, monocular depth estimation,
+photogrammetry, 3D documentation, and neural rendering made this project
+technically possible.</p>
+<p><strong>Page iii</strong></p>
+<h2 data-number="1.3" id="abstract"><span
+class="header-section-number">1.3</span> Abstract</h2>
+<p>S.P.E.C.T.R.A is a 3D reconstruction dashboard designed to make an
+image-to-3D pipeline accessible through a Streamlit user interface. The
+system accepts real smartphone image sequences and synthetic baseline
+scenes. Its backend stages perform smart frame selection, keyframe
+preparation, monocular depth estimation using Depth Anything V2, sparse
+Structure from Motion using ORB features and essential matrix pose
+recovery, depth-based dense point cloud fusion, DBSCAN cleanup, Poisson
+surface meshing, evaluation reporting, and Gaussian Splatting dataset
+export.</p>
+<p>The project responds to a practical problem: high-quality 3D
+reconstruction workflows are often difficult to demonstrate, evaluate,
+and explain because they require many separate scripts, careful image
+capture, calibration awareness, and multiple output formats.
+S.P.E.C.T.R.A solves this by integrating the pipeline into a single
+dashboard with pages for upload, pipeline execution, 3D viewing,
+comparison, metrics, and export readiness.</p>
+<p>The report presents the project background, aims, objectives, scope,
+architecture, dependencies, resources, literature review, methodology,
+results, discussion, conclusions, and proposed future enhancements.
+Evaluation data includes a real indoor kitchen smartphone dataset with
+35 input images and 25 selected keyframes, plus synthetic indoor,
+terrain, and urban baselines. Mock evaluation values show a complete
+nine-stage run with a total processing time of 236.76 seconds, a
+reconstruction score of 90 percent, RMS reprojection error of 0.74
+pixels, and export readiness of four supported formats.</p>
+<p>The findings show that the system is suitable for demonstration,
+learning, and prototype evaluation of image-based reconstruction.
+However, its final accuracy depends on capture quality, calibration,
+depth model behavior, camera pose stability, and downstream cleanup.
+Future enhancements should prioritize measured evaluation, GLTF export,
+stronger camera calibration workflows, benchmark datasets, GPU-aware
+processing, improved mesh texturing, and stronger report export
+integration.</p>
+<p><strong>Page iv</strong></p>
+<h2 data-number="1.4" id="list-of-abbreviations"><span
+class="header-section-number">1.4</span> List of Abbreviations</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Abbreviation</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3D</td>
+<td>Three-Dimensional</td>
+</tr>
+<tr>
+<td>ALS</td>
+<td>Airborne Laser Scanning</td>
+</tr>
+<tr>
+<td>API</td>
+<td>Application Programming Interface</td>
+</tr>
+<tr>
+<td>COLMAP</td>
+<td>Structure from Motion and Multi-View Stereo reconstruction software
+format/workflow</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>Central Processing Unit</td>
+</tr>
+<tr>
+<td>DBSCAN</td>
+<td>Density-Based Spatial Clustering of Applications with Noise</td>
+</tr>
+<tr>
+<td>DEM</td>
+<td>Digital Elevation Model</td>
+</tr>
+<tr>
+<td>DTM</td>
+<td>Digital Terrain Model</td>
+</tr>
+<tr>
+<td>GLTF</td>
+<td>GL Transmission Format</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>Graphics Processing Unit</td>
+</tr>
+<tr>
+<td>ICP</td>
+<td>Iterative Closest Point</td>
+</tr>
+<tr>
+<td>JSON</td>
+<td>JavaScript Object Notation</td>
+</tr>
+<tr>
+<td>LiDAR</td>
+<td>Light Detection and Ranging</td>
+</tr>
+<tr>
+<td>MDE</td>
+<td>Monocular Depth Estimation</td>
+</tr>
+<tr>
+<td>MVS</td>
+<td>Multi-View Stereo</td>
+</tr>
+<tr>
+<td>OBJ</td>
+<td>Wavefront Object 3D mesh format</td>
+</tr>
+<tr>
+<td>ORB</td>
+<td>Oriented FAST and Rotated BRIEF</td>
+</tr>
+<tr>
+<td>PLY</td>
+<td>Polygon File Format / Stanford Triangle Format</td>
+</tr>
+<tr>
+<td>RANSAC</td>
+<td>Random Sample Consensus</td>
+</tr>
+<tr>
+<td>RGB</td>
+<td>Red Green Blue</td>
+</tr>
+<tr>
+<td>RMS</td>
+<td>Root Mean Square</td>
+</tr>
+<tr>
+<td>SfM</td>
+<td>Structure from Motion</td>
+</tr>
+<tr>
+<td>SfM-MVS</td>
+<td>Structure from Motion with Multi-View Stereo</td>
+</tr>
+<tr>
+<td>S.P.E.C.T.R.A</td>
+<td>System for Photogrammetric Estimation, Cloud Triangulation,
+Reconstruction and Analysis</td>
+</tr>
+<tr>
+<td>UI</td>
+<td>User Interface</td>
+</tr>
+<tr>
+<td>UAV</td>
+<td>Unmanned Aerial Vehicle</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Page 5</strong></p>
+<h2 data-number="1.5" id="list-of-figures"><span
+class="header-section-number">1.5</span> List of Figures</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Figure</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">Figure 1</td>
+<td>Overall S.P.E.C.T.R.A System Architecture</td>
+</tr>
+<tr>
+<td style="text-align: right;">Figure 2</td>
+<td>Nine-Stage Reconstruction Pipeline</td>
+</tr>
+<tr>
+<td style="text-align: right;">Figure 3</td>
+<td>Dashboard Page Navigation Model</td>
+</tr>
+<tr>
+<td style="text-align: right;">Figure 4</td>
+<td>Data Directory and Output Flow</td>
+</tr>
+<tr>
+<td style="text-align: right;">Figure 5</td>
+<td>Methodology Flow from Capture to Export</td>
+</tr>
+<tr>
+<td style="text-align: right;">Figure 6</td>
+<td>Sparse to Dense Reconstruction Concept</td>
+</tr>
+<tr>
+<td style="text-align: right;">Figure 7</td>
+<td>Mesh Generation and Cleanup Workflow</td>
+</tr>
+<tr>
+<td style="text-align: right;">Figure 8</td>
+<td>Evaluation and Export Readiness Model</td>
+</tr>
+<tr>
+<td style="text-align: right;">Figure 9</td>
+<td>Real Dataset Output Growth</td>
+</tr>
+<tr>
+<td style="text-align: right;">Figure 10</td>
+<td>Synthetic Baseline Comparison</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Page 6</strong></p>
+<h2 data-number="1.6" id="table-of-contents"><span
+class="header-section-number">1.6</span> Table of Contents</h2>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th style="text-align: right;">Page</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project Title and Opening Statement</td>
+<td style="text-align: right;">i</td>
+</tr>
+<tr>
+<td>Declaration</td>
+<td style="text-align: right;">ii</td>
+</tr>
+<tr>
+<td>Acknowledgements</td>
+<td style="text-align: right;">iii</td>
+</tr>
+<tr>
+<td>Abstract</td>
+<td style="text-align: right;">iv</td>
+</tr>
+<tr>
+<td>List of Abbreviations</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>List of Figures</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>Table of Contents</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td>Chapter 1: Introduction</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td>Chapter 2: Literature Review</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td>Chapter 3: Methodology</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr>
+<td>Chapter 4: Results and Discussion</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr>
+<td>Chapter 5: Conclusion and Future Enhancement</td>
+<td style="text-align: right;">44</td>
+</tr>
+<tr>
+<td>References</td>
+<td style="text-align: right;">48</td>
+</tr>
+<tr>
+<td>Appendices</td>
+<td style="text-align: right;">51</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Page 7</strong></p>
+<h1 data-number="2" id="chapter-1-introduction"><span
+class="header-section-number">2</span> Chapter 1: Introduction</h1>
+<h2 data-number="2.1" id="introduction"><span
+class="header-section-number">2.1</span> 1.1 Introduction</h2>
+<p>3D reconstruction is the process of generating a three-dimensional
+representation of a real or synthetic scene from captured data.
+Traditional 3D reconstruction can rely on LiDAR, structured light,
+stereo camera rigs, depth cameras, or photogrammetry. The S.P.E.C.T.R.A
+project focuses on an accessible route: reconstructing a scene from
+overlapping smartphone images and presenting the pipeline through an
+interactive dashboard.</p>
+<p>The project is built as a Streamlit application with Python backend
+scripts. The dashboard is not a static viewer; it is an operator
+interface that organizes the complete reconstruction workflow into
+readable stages. The user can ingest images, run keyframe selection,
+estimate depth, create sparse and dense clouds, clean the result,
+generate mesh outputs, compare reconstruction states, review metrics,
+and export files.</p>
+<p>The system is especially useful for demonstration because each stage
+maps to a visible output. Instead of treating 3D reconstruction as a
+hidden black-box operation, S.P.E.C.T.R.A exposes the workflow as a
+sequence of controlled processes. This helps users understand why
+capture quality, overlap, camera motion, calibration, depth estimation,
+pose recovery, outlier filtering, and export formatting all matter.</p>
+<p><strong>Page 8</strong></p>
+<h2 data-number="2.2" id="background"><span
+class="header-section-number">2.2</span> 1.2 Background</h2>
+<p>Modern 3D reconstruction sits at the intersection of computer vision,
+photogrammetry, graphics, deep learning, and data visualization. In a
+classic image-based workflow, multiple overlapping images are analyzed
+for shared visual features. These features are matched across views,
+camera movement is estimated, and 3D points are triangulated. This
+creates a sparse point cloud. A denser representation can then be
+produced using depth estimation, multi-view stereo, or learned monocular
+depth.</p>
+<p>S.P.E.C.T.R.A uses a hybrid approach. It combines feature-based
+Structure from Motion with deep monocular depth estimation. The sparse
+reconstruction stage estimates camera poses and sparse geometry from ORB
+features, descriptor matching, essential matrix estimation, RANSAC
+filtering, and pose recovery. The dense stage uses Depth Anything V2
+predictions and camera pose estimates to back-project pixels into 3D
+space and fuse multiple partial clouds.</p>
+<p>This project also recognizes that reconstruction is not complete when
+a point cloud is created. Point clouds must be cleaned, inspected,
+evaluated, and exported. The pipeline therefore includes DBSCAN-based
+cleanup, Poisson surface reconstruction, OBJ and PLY output, and
+Gaussian Splatting dataset export. The Streamlit dashboard provides
+practical pages for these tasks: Guide, Upload, Pipeline, 3D Viewer,
+Compare, Metrics, and Export.</p>
+<p>The main project files are organized as follows:</p>
+<pre class="text"><code>recon3d/
+|-- spectra_dashboard/
+|   `-- main.py
+|-- src/
+|   |-- capture/
+|   |-- depth/
+|   |-- sfm/
+|   |-- fusion/
+|   |-- mesh/
+|   |-- export/
+|   `-- utils/
+|-- data/
+|   |-- raw_phone/
+|   |-- selected/
+|   |-- keyframes/
+|   |-- results/
+|   `-- gaussian_splatting_scene/
+|-- gaussian-splatting/
+|-- requirements.txt
+|-- setup.bat
+|-- setup.sh
+|-- start_dashboard.bat
+`-- start_dashboard.sh</code></pre>
+<p><strong>Page 9</strong></p>
+<h2 data-number="2.3" id="aim-and-objectives"><span
+class="header-section-number">2.3</span> 1.3 Aim and Objectives</h2>
+<h3 data-number="2.3.1" id="main-aim"><span
+class="header-section-number">2.3.1</span> 1.3.1 Main Aim</h3>
+<p>The main aim of S.P.E.C.T.R.A is to develop a dashboard-driven 3D
+reconstruction workflow that converts smartphone image sequences into
+inspectable point clouds, mesh outputs, evaluation metrics, and
+export-ready reconstruction assets.</p>
+<h3 data-number="2.3.2" id="specific-objectives"><span
+class="header-section-number">2.3.2</span> 1.3.2 Specific
+Objectives</h3>
+<ol type="1">
+<li>To provide a Streamlit dashboard that organizes the 3D
+reconstruction process into clear pages and stages.</li>
+<li>To select high-quality and diverse frames from raw smartphone images
+or video-derived frames.</li>
+<li>To prepare consistent keyframes for downstream reconstruction by
+resizing, filtering, and naming images.</li>
+<li>To estimate monocular depth maps using a deep learning based depth
+model.</li>
+<li>To recover sparse camera poses and sparse 3D points using image
+features and geometric estimation.</li>
+<li>To fuse depth maps into a pose-aligned dense point cloud.</li>
+<li>To clean noisy reconstruction points using clustering and outlier
+removal.</li>
+<li>To reconstruct a surface mesh from the cleaned point cloud.</li>
+<li>To evaluate reconstruction outputs through point counts, quality
+metrics, comparison views, and acceptance criteria.</li>
+<li>To export PLY, OBJ, mesh, and Gaussian Splatting compatible outputs
+for external visualization and rendering.</li>
+</ol>
+<h2 data-number="2.4" id="problem-statement"><span
+class="header-section-number">2.4</span> 1.4 Problem Statement</h2>
+<p>Many students and prototype developers can capture images with
+smartphones, but turning those images into usable 3D assets remains
+difficult. The workflow usually requires multiple command-line tools,
+separate scripts, manual file management, knowledge of camera
+calibration, understanding of point cloud processing, and familiarity
+with several 3D file formats. This creates a barrier for demonstration,
+learning, and supervision because the process is hard to observe from
+end to end.</p>
+<p>S.P.E.C.T.R.A addresses this problem by combining the pipeline into
+one dashboard and by preserving intermediate outputs. The dashboard
+makes reconstruction more transparent, repeatable, and explainable.</p>
+<p><strong>Page 10</strong></p>
+<h2 data-number="2.5" id="scope-of-the-project"><span
+class="header-section-number">2.5</span> 1.5 Scope of the Project</h2>
+<p>The project scope includes:</p>
+<ol type="1">
+<li>Smartphone image ingestion from <code>data/raw_phone</code>.</li>
+<li>Smart frame selection into <code>data/selected</code>.</li>
+<li>Keyframe preparation into <code>data/keyframes</code>.</li>
+<li>Depth estimation into <code>data/results/depth</code>.</li>
+<li>Sparse reconstruction into
+<code>data/results/sparse_cloud.ply</code> and
+<code>data/results/camera_poses.json</code>.</li>
+<li>Dense point cloud fusion into
+<code>data/results/dense_fused_cloud_pose_aligned.ply</code>.</li>
+<li>Cleanup into
+<code>data/results/dense_fused_cloud_clean.ply</code>.</li>
+<li>Mesh generation into <code>data/results/mesh_poisson.ply</code> and
+<code>data/results/mesh_poisson.obj</code>.</li>
+<li>Evaluation reporting and dashboard metrics.</li>
+<li>Gaussian Splatting dataset export into
+<code>data/gaussian_splatting_scene</code>.</li>
+<li>Synthetic baseline scene generation for indoor, terrain, and urban
+examples.</li>
+</ol>
+<p>The project does not currently include a production Flask API, React
+frontend, cloud deployment, automatic GLTF export, full photorealistic
+texture baking, or a complete benchmark suite with ground-truth
+geometry. Those are proposed future improvements.</p>
+<h2 data-number="2.6" id="project-architecture"><span
+class="header-section-number">2.6</span> 1.6 Project Architecture</h2>
+<pre class="mermaid"><code>flowchart LR
+    A[Raw smartphone images&lt;br/&gt;data/raw_phone] --&gt; B[Smart frame selector&lt;br/&gt;ORB, pHash, histogram]
+    B --&gt; C[Selected frames&lt;br/&gt;data/selected]
+    C --&gt; D[Prepare keyframes&lt;br/&gt;resize, blur filter]
+    D --&gt; E[Depth estimation&lt;br/&gt;Depth Anything V2]
+    D --&gt; F[Sparse SfM&lt;br/&gt;ORB, RANSAC, recoverPose]
+    E --&gt; G[Depth fusion&lt;br/&gt;back-project depth]
+    F --&gt; G
+    G --&gt; H[Cleanup&lt;br/&gt;DBSCAN largest cluster]
+    H --&gt; I[Poisson mesh&lt;br/&gt;PLY and OBJ]
+    F --&gt; J[Gaussian export&lt;br/&gt;COLMAP-style files]
+    I --&gt; K[Dashboard viewer, metrics, export]
+    J --&gt; K</code></pre>
+<p><strong>Figure 1: Overall S.P.E.C.T.R.A System
+Architecture</strong></p>
+<p>The architecture is modular. The dashboard calls backend scripts as
+subprocess stages. The backend scripts share common data folders, which
+makes each stage testable and inspectable independently.</p>
+<p><strong>Page 11</strong></p>
+<h1 data-number="3" id="chapter-2-literature-review"><span
+class="header-section-number">3</span> Chapter 2: Literature Review</h1>
+<h2 data-number="3.1" id="introduction-1"><span
+class="header-section-number">3.1</span> 2.1 Introduction</h2>
+<p>This chapter reviews the technical and contextual literature that
+supports S.P.E.C.T.R.A. The review is deliberately wider than a
+description of the implemented dashboard because the dashboard is not
+the central contribution of the project. The central contribution is the
+integration of a smartphone image-to-3D reconstruction workflow that
+moves from capture to frame selection, depth estimation, sparse pose
+recovery, dense point cloud fusion, cleanup, mesh reconstruction,
+evaluation, and Gaussian Splatting export. The Streamlit interface is
+discussed only as a supporting layer for upload, monitoring,
+visualization, metrics, and export.</p>
+<p>The literature is organized around the main technical decisions made
+in the project. These include passive image-based reconstruction,
+Structure from Motion, feature detection, camera calibration, monocular
+depth estimation, point cloud fusion, point cloud cleaning, mesh
+reconstruction, neural rendering, and visualization. The chapter also
+reviews African and Ugandan context because low-cost 3D documentation
+has direct relevance to education, digital heritage, mapping, local
+prototyping, and cultural preservation.</p>
+<h2 data-number="3.2" id="foundations-of-3d-reconstruction"><span
+class="header-section-number">3.2</span> 2.2 Foundations of 3D
+Reconstruction</h2>
+<p>3D reconstruction is the process of estimating the shape, structure,
+and sometimes appearance of a real scene or object in three dimensions.
+The reconstructed output can take several forms, including a sparse
+point cloud, a dense point cloud, a polygon mesh, a textured mesh, a
+voxel grid, or a neural rendering representation. The appropriate
+representation depends on the purpose of the system. A sparse point
+cloud is useful for camera pose estimation and geometric evidence. A
+dense point cloud is useful for visual inspection and measurement. A
+mesh is useful for editing, animation, fabrication, or import into 3D
+applications. Gaussian Splatting is useful for novel-view visualization
+and photorealistic scene rendering.</p>
+<p>Reconstruction methods are usually divided into active and passive
+approaches. Active methods use a device that emits a signal, such as
+laser light, structured light, infrared patterns, or LiDAR pulses.
+Passive methods rely on external illumination and infer geometry from
+images. S.P.E.C.T.R.A belongs mainly to the passive image-based category
+because it reconstructs scenes from smartphone images. However, it also
+borrows ideas from learned depth estimation, where a neural model
+predicts dense depth from single RGB images.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Method Type</th>
+<th>Examples</th>
+<th>Main Strength</th>
+<th>Main Limitation</th>
+<th>Relevance to S.P.E.C.T.R.A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Active reconstruction</td>
+<td>LiDAR, structured light, depth cameras</td>
+<td>Can produce direct depth measurements</td>
+<td>Requires specialized hardware</td>
+<td>Used as a comparison point, not used directly</td>
+</tr>
+<tr>
+<td>Passive reconstruction</td>
+<td>Photogrammetry, SfM, stereo, MVS</td>
+<td>Works with ordinary cameras</td>
+<td>Sensitive to overlap, texture, blur, and calibration</td>
+<td>Main project category</td>
+</tr>
+<tr>
+<td>Learned depth reconstruction</td>
+<td>MiDaS, Depth Anything V2</td>
+<td>Produces dense depth cues from single images</td>
+<td>Scale ambiguity and model bias</td>
+<td>Used for depth estimation stage</td>
+</tr>
+<tr>
+<td>Neural rendering</td>
+<td>NeRF, Gaussian Splatting</td>
+<td>Strong visual realism and novel views</td>
+<td>Needs good camera poses and training/export structure</td>
+<td>Supported through Gaussian export</td>
+</tr>
+</tbody>
+</table>
+<p>The advantage of passive reconstruction is accessibility. A user does
+not need a dedicated scanner to start the reconstruction process. This
+matches the motivation of S.P.E.C.T.R.A: ordinary smartphone images can
+become the starting point for point clouds, meshes, and export-ready 3D
+assets. The disadvantage is that passive reconstruction depends heavily
+on capture discipline. Poor lighting, motion blur, reflective surfaces,
+low texture, and insufficient overlap can reduce reconstruction
+quality.</p>
+<h2 data-number="3.3"
+id="photogrammetry-and-smartphone-based-capture"><span
+class="header-section-number">3.3</span> 2.3 Photogrammetry and
+Smartphone-Based Capture</h2>
+<p>Photogrammetry estimates measurements and geometry from photographs.
+Modern digital photogrammetry often uses many overlapping images,
+detects shared visual features, estimates camera positions, and
+triangulates 3D points. In a controlled photogrammetry workflow, the
+operator captures an object or scene from multiple viewpoints with
+sufficient overlap between consecutive images. The captured image
+sequence should include rich texture, consistent exposure, minimal blur,
+and a stable scene.</p>
+<p>Smartphones are attractive capture devices because they are
+affordable, portable, and widely available. They can produce
+high-resolution images and are already familiar to most users. This
+makes them suitable for educational reconstruction systems and
+early-stage prototypes. However, smartphone capture also introduces
+challenges. The camera may apply automatic exposure, automatic focus,
+sharpening, noise reduction, rolling shutter effects, and compression.
+The user may move too quickly, creating blur. Wide-angle lenses may
+introduce distortion. Some phones save HEIC/HEIF images, which require
+additional decoding support. S.P.E.C.T.R.A accounts for some of these
+realities through image filtering, optional HEIC support, keyframe
+preparation, and camera calibration files.</p>
+<p>The capture requirements found in photogrammetry literature directly
+justify the first two stages of the S.P.E.C.T.R.A pipeline. The raw
+images are not passed immediately into reconstruction. They are first
+filtered for feature richness, diversity, and quality. This is important
+because the failure of early image selection can propagate through the
+rest of the pipeline. If the selected frames are blurry, repetitive, or
+textureless, then feature matching becomes unreliable, pose recovery
+becomes unstable, depth fusion becomes misaligned, and the final mesh
+becomes noisy.</p>
+<h2 data-number="3.4" id="structure-from-motion"><span
+class="header-section-number">3.4</span> 2.4 Structure from Motion</h2>
+<p>Structure from Motion is a central method in image-based 3D
+reconstruction. It estimates both the structure of the scene and the
+motion or position of the camera from multiple images. In a typical SfM
+pipeline, the system detects image features, matches them between
+images, estimates epipolar geometry, recovers relative camera poses,
+triangulates 3D points, and optionally refines the result through bundle
+adjustment. Schonberger and Frahm’s work on COLMAP shows the importance
+of robust feature matching, track management, triangulation, and
+optimization in mature SfM systems.</p>
+<p>S.P.E.C.T.R.A implements a simplified SfM-style stage in
+<code>src/sfm/sparse_recon_live.py</code>. The script reads prepared
+keyframes, extracts ORB features, matches descriptors, filters matches,
+estimates the essential matrix, applies RANSAC, recovers camera pose,
+triangulates sparse points, and saves camera pose records. The output
+includes <code>data/results/sparse_cloud.ply</code> and
+<code>data/results/camera_poses.json</code>. These outputs are important
+because they provide the geometric frame used later by dense fusion and
+Gaussian export.</p>
+<p>The essential matrix represents the epipolar relationship between two
+calibrated camera views. If corresponding feature points are known in
+two images, the essential matrix can be estimated and decomposed to
+recover relative rotation and translation direction. RANSAC is used
+because feature matches may include outliers. A naive pose estimate
+using all matches would be unstable if many correspondences are
+incorrect. RANSAC repeatedly samples possible match subsets, estimates a
+model, and keeps the model that explains the largest set of inliers.</p>
+<p>The main strength of SfM is that it provides geometric consistency.
+It does not merely guess dense structure from image appearance; it uses
+repeated visual evidence across views. Its main limitation is that it
+depends on sufficient feature correspondences. Textureless walls,
+reflective surfaces, transparent objects, strong motion blur, repeated
+patterns, and poor overlap can reduce the number or reliability of
+matches. S.P.E.C.T.R.A therefore combines sparse SfM with learned depth
+estimation, so that the system has both camera pose evidence and dense
+depth cues.</p>
+<p><strong>Page 12</strong></p>
+<h2 data-number="3.5" id="orb-feature-detection-and-matching"><span
+class="header-section-number">3.5</span> 2.5 ORB Feature Detection and
+Matching</h2>
+<p>Feature detection identifies repeatable image locations, such as
+corners, textured patches, and visually distinctive points. Feature
+descriptors encode the local appearance around those points so that the
+same scene point can be matched across different images. SIFT and SURF
+are historically important feature methods, but ORB is popular in
+practical systems because it is efficient and uses binary descriptors.
+Rublee et al. introduced ORB as an efficient alternative to SIFT and
+SURF, combining oriented FAST keypoints with rotated BRIEF
+descriptors.</p>
+<p>S.P.E.C.T.R.A uses ORB in two important places. First,
+<code>src/utils/smart_frame_selector.py</code> counts ORB features to
+reject frames that are likely to be blurry or textureless. A frame with
+few ORB keypoints provides weak evidence for SfM. Second,
+<code>src/sfm/sparse_recon_live.py</code> uses ORB features and
+descriptor matching for pose recovery and sparse triangulation. The same
+idea therefore supports both dataset preparation and reconstruction.</p>
+<p>The benefit of ORB for this project is speed. A student prototype
+running on a laptop must avoid unnecessarily expensive operations. ORB
+descriptors can be matched efficiently using Hamming distance, making
+them suitable for a Python and OpenCV workflow. ORB is also appropriate
+for a dashboard-driven system where stages should complete in a
+reasonable time for demonstration.</p>
+<p>The limitation is that ORB is not always as distinctive as heavier
+descriptors. It can struggle under severe viewpoint change, extreme
+lighting variation, motion blur, repeated texture, or low-detail
+surfaces. For that reason, S.P.E.C.T.R.A’s frame selector uses multiple
+indicators, not ORB alone. It combines ORB feature count, perceptual
+hash distance, histogram difference, and sharpness-based scoring to
+improve frame quality before reconstruction begins.</p>
+<h2 data-number="3.6"
+id="camera-calibration-and-intrinsic-parameters"><span
+class="header-section-number">3.6</span> 2.6 Camera Calibration and
+Intrinsic Parameters</h2>
+<p>Camera calibration estimates the internal parameters of a camera.
+These include focal length, principal point, and lens distortion
+coefficients. In pinhole camera geometry, a 3D point is projected into
+image coordinates through the camera intrinsic matrix. If this matrix is
+inaccurate, back-projection and pose estimation can produce distorted
+geometry. Distortion coefficients are also important because smartphone
+lenses may introduce radial or tangential distortion, especially near
+image edges.</p>
+<p>S.P.E.C.T.R.A includes calibration resources in
+<code>data/calibration</code> and camera intrinsics JSON files in
+<code>data</code>. The project code loads calibration information where
+available and falls back to estimated intrinsics if an exact calibration
+match is not found. This is a practical design decision for a prototype,
+but it also introduces a limitation. Accurate reconstruction should use
+calibration that matches the exact camera, image resolution, zoom level,
+and capture mode used during the dataset collection.</p>
+<p>Checkerboard calibration is a common method because the known
+geometry of the checkerboard gives the system reliable 2D-3D
+correspondences. OpenCV provides standard calibration and undistortion
+tools. In S.P.E.C.T.R.A, calibration affects both sparse reconstruction
+and dense fusion. Sparse reconstruction uses calibration when estimating
+and undistorting image points. Dense fusion uses camera intrinsics to
+convert depth pixels into 3D points. Gaussian export also uses
+calibration when writing COLMAP-style camera files.</p>
+<h2 data-number="3.7" id="monocular-depth-estimation"><span
+class="header-section-number">3.7</span> 2.7 Monocular Depth
+Estimation</h2>
+<p>Monocular depth estimation predicts depth from a single RGB image.
+This is difficult because a single image does not contain true metric
+depth by itself. Many different 3D scenes can produce a similar 2D
+image. Human observers use context, object size, perspective, texture
+gradients, lighting, and learned priors to infer depth. Modern deep
+learning models do something similar at scale by learning statistical
+relationships between image appearance and depth.</p>
+<p>MiDaS and Depth Anything represent important work in robust monocular
+depth estimation. Depth Anything V2 improves monocular depth prediction
+using large-scale training strategies and released model variants.
+S.P.E.C.T.R.A uses
+<code>depth-anything/Depth-Anything-V2-Small-hf</code> through Hugging
+Face Transformers in <code>src/depth/midas_depth.py</code>. The model
+processes each keyframe and writes two outputs: a <code>.npy</code>
+depth array for computation and a <code>.png</code> preview for
+inspection.</p>
+<p>The strength of monocular depth in S.P.E.C.T.R.A is that it gives
+dense per-pixel depth cues without requiring a depth camera or stereo
+rig. This helps the system produce a denser point cloud than sparse SfM
+alone. The limitation is scale ambiguity. The predicted depth may be
+relative rather than truly metric. The code therefore treats depth
+values carefully and uses a shared sequence range and filtering
+thresholds during fusion. This is sufficient for a prototype and visual
+reconstruction pipeline, but final academic evaluation should compare
+the output against measured dimensions or ground truth if available.</p>
+<h2 data-number="3.8" id="point-cloud-generation-and-fusion"><span
+class="header-section-number">3.8</span> 2.8 Point Cloud Generation and
+Fusion</h2>
+<p>A point cloud is a set of 3D points that represent sampled geometry
+from a scene or object. Sparse point clouds usually come from
+triangulated feature matches. Dense point clouds may come from
+multi-view stereo, depth maps, LiDAR, structured light, or learned depth
+predictions. S.P.E.C.T.R.A produces multiple point cloud outputs so that
+reconstruction progress can be inspected at different stages.</p>
+<p>The dense fusion stage in <code>src/fusion/depth_fusion.py</code>
+reads depth maps, camera poses, camera calibration, and keyframe images.
+It back-projects valid depth pixels into 3D camera coordinates using the
+camera intrinsic matrix. It then transforms those points into a shared
+world coordinate system using the recovered camera poses. Color
+information from the source image is attached to the generated points.
+The result is saved as a pose-aligned dense cloud.</p>
+<p>Fusion is important because a single image depth map only describes
+geometry visible from one viewpoint. Multi-view fusion combines partial
+views into a more complete representation. However, fusion is also a
+major source of error. If camera poses are wrong, depth maps are
+inconsistent, calibration is inaccurate, or scale changes between
+frames, the fused cloud may become smeared, duplicated, or distorted.
+S.P.E.C.T.R.A includes thresholding, frame selection, depth clipping,
+and optional alignment behavior to reduce these problems.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Representation</th>
+<th>Generated From</th>
+<th>Strength</th>
+<th>Limitation</th>
+<th>S.P.E.C.T.R.A Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sparse point cloud</td>
+<td>Feature matches and triangulation</td>
+<td>Geometrically meaningful evidence</td>
+<td>Low density</td>
+<td><code>sparse_cloud.ply</code></td>
+</tr>
+<tr>
+<td>Dense point cloud</td>
+<td>Depth maps and camera poses</td>
+<td>Better scene coverage</td>
+<td>Sensitive to depth and pose errors</td>
+<td><code>dense_fused_cloud_pose_aligned.ply</code></td>
+</tr>
+<tr>
+<td>Cleaned point cloud</td>
+<td>Clustering and outlier filtering</td>
+<td>Reduced noise</td>
+<td>May remove valid isolated details</td>
+<td><code>dense_fused_cloud_clean.ply</code></td>
+</tr>
+<tr>
+<td>Mesh</td>
+<td>Surface reconstruction from points</td>
+<td>Editable surface representation</td>
+<td>Can fill gaps unrealistically</td>
+<td><code>mesh_poisson.ply</code>, <code>mesh_poisson.obj</code></td>
+</tr>
+<tr>
+<td>Gaussian scene</td>
+<td>Images, poses, sparse points</td>
+<td>Supports neural rendering workflow</td>
+<td>Requires training outside the dashboard</td>
+<td><code>data/gaussian_splatting_scene</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Page 13</strong></p>
+<h2 data-number="3.9" id="point-cloud-cleaning-and-clustering"><span
+class="header-section-number">3.9</span> 2.9 Point Cloud Cleaning and
+Clustering</h2>
+<p>Raw point clouds often contain outliers. Outliers may come from poor
+depth predictions, incorrect pose estimates, feature mismatches,
+reflective surfaces, background clutter, or partial occlusion. If these
+points are passed directly into meshing, they can create floating
+surfaces, spikes, holes, or unwanted geometry. Cleaning is therefore a
+necessary bridge between dense fusion and surface reconstruction.</p>
+<p>DBSCAN is a density-based clustering method introduced by Ester et
+al. It groups points that are close to each other and marks points in
+sparse regions as noise. The method is useful in point cloud processing
+because real object or scene geometry often forms dense connected
+regions, while outliers are scattered. S.P.E.C.T.R.A’s cleanup stage
+keeps the dominant geometry and removes disconnected outliers, producing
+<code>data/results/dense_fused_cloud_clean.ply</code>.</p>
+<p>The benefit of this approach is simplicity and interpretability. It
+is easy to explain why the largest cluster is often the desired
+reconstruction. The limitation is that the assumption may not always
+hold. A valid reconstruction may include multiple separate objects, or a
+large unwanted background plane may dominate the cloud. For future work,
+the cleanup stage could expose parameters in the dashboard, allow manual
+cluster selection, or combine statistical outlier removal with semantic
+or geometric filtering.</p>
+<h2 data-number="3.10"
+id="mesh-reconstruction-and-surface-generation"><span
+class="header-section-number">3.10</span> 2.10 Mesh Reconstruction and
+Surface Generation</h2>
+<p>A point cloud is useful for inspection, but many downstream
+applications require a surface mesh. A mesh represents geometry using
+vertices, edges, and faces. The mesh can be exported to 3D tools,
+edited, rendered, or used in simulation. S.P.E.C.T.R.A uses Poisson
+surface reconstruction through Open3D in
+<code>src/mesh/mesh_surface.py</code>.</p>
+<p>Poisson reconstruction estimates a continuous surface from oriented
+point samples. Before running Poisson reconstruction, the system
+estimates normals for the point cloud. Normals describe the local
+surface direction. If normals are inconsistent, the resulting mesh may
+be inverted or unstable. After reconstruction, low-density vertices are
+trimmed because Poisson methods may fill unsupported regions and create
+smooth surfaces around areas where input points are sparse.</p>
+<p>The mesh stage writes both PLY and OBJ files. PLY is useful for point
+clouds and meshes with vertex attributes. OBJ is widely supported by 3D
+modeling tools and game engines. The output files are
+<code>data/results/mesh_poisson.ply</code> and
+<code>data/results/mesh_poisson.obj</code>.</p>
+<p>The main strength of Poisson meshing is that it can create smooth
+surfaces from noisy point clouds. Its limitation is that it may
+hallucinate or close surfaces where data is missing. This matters in
+S.P.E.C.T.R.A because smartphone captures may not cover every side of an
+object or room. A mesh can look complete even when parts are inferred
+rather than measured. The report must therefore discuss mesh results as
+reconstructed approximations, not as guaranteed ground truth.</p>
+<h2 data-number="3.11"
+id="neural-rendering-and-gaussian-splatting"><span
+class="header-section-number">3.11</span> 2.11 Neural Rendering and
+Gaussian Splatting</h2>
+<p>Recent 3D graphics research has moved beyond classical explicit
+geometry toward neural and point-based rendering. Neural Radiance Fields
+demonstrated that scenes can be represented through learned functions,
+while 3D Gaussian Splatting represents a scene using many anisotropic
+Gaussian primitives. Kerbl et al. showed that Gaussian Splatting can
+support high-quality real-time radiance field rendering when supplied
+with posed images and an initial sparse reconstruction.</p>
+<p>S.P.E.C.T.R.A does not train a Gaussian Splatting model inside the
+Streamlit application. Instead, it exports a Gaussian Splatting-ready
+scene package. The script <code>src/export/gaussian_export.py</code>
+reads the keyframes, camera poses, camera calibration, and sparse point
+cloud. It then writes a COLMAP-style folder with
+<code>cameras.txt</code>, <code>images.txt</code>, and
+<code>points3D.txt</code>, plus copied or undistorted images. This
+design connects the classical reconstruction pipeline to modern neural
+rendering workflows.</p>
+<p>The export is important because it broadens the usefulness of the
+project. A mesh is suitable for editing and geometry inspection, while
+Gaussian Splatting is suitable for view synthesis and visual realism. By
+supporting both, S.P.E.C.T.R.A demonstrates that an accessible
+smartphone pipeline can produce more than one type of 3D artifact.</p>
+<h2 data-number="3.12" id="visualization-and-interaction-layers"><span
+class="header-section-number">3.12</span> 2.12 Visualization and
+Interaction Layers</h2>
+<p>Reconstruction systems are often difficult for learners because the
+workflow is distributed across many commands, folders, and file formats.
+A user may not know which stage failed, which outputs exist, or whether
+the result is ready for export. Visualization and interaction layers
+address this problem by making the pipeline observable.</p>
+<p>S.P.E.C.T.R.A uses Streamlit as this supporting layer. The dashboard
+provides pages for guidance, dataset upload, pipeline execution, 3D
+viewing, outputs, metrics, exports, and resources. It reads live backend
+status from JSON files and displays stage progress. It uses Plotly for
+browser-based point cloud visualization and provides file export
+controls for generated artifacts.</p>
+<p>It is important to position this correctly. The dashboard is not the
+core research contribution. It is the interface that makes the
+reconstruction pipeline easier to operate and explain. The underlying
+contribution is the staged backend workflow that connects smartphone
+images to depth maps, camera poses, dense clouds, cleaned clouds,
+meshes, evaluation outputs, and Gaussian Splatting export.</p>
+<p><strong>Page 14</strong></p>
+<h2 data-number="3.13" id="african-and-ugandan-context"><span
+class="header-section-number">3.13</span> 2.13 African and Ugandan
+Context</h2>
+<p>African applications of 3D reconstruction include cultural heritage
+documentation, environmental monitoring, urban mapping, archaeology,
+education, disaster recovery, and local digital content creation.
+Low-cost capture is especially important because professional laser
+scanning equipment, specialized depth cameras, and commercial
+photogrammetry suites may be expensive or unavailable to many students
+and local institutions.</p>
+<p>Dandois and Ellis show how low-cost Structure from Motion
+photogrammetry can support developing-country environmental monitoring.
+Although their work focuses on UAV forestry, the broader lesson applies
+to S.P.E.C.T.R.A: accessible imaging platforms can create useful 3D
+information when capture and processing are controlled. The Zamani
+Project and other African heritage documentation initiatives also show
+that 3D documentation can preserve sites, support research, and create
+educational resources.</p>
+<p>Uganda provides a particularly meaningful local context through the
+Royal Tombs at Kasubi. CyArk’s Kasubi Tombs resources show that digital
+capture can become important when physical heritage is damaged or
+threatened. The 2010 fire at Kasubi demonstrates that documentation can
+become a recovery and preservation asset. S.P.E.C.T.R.A is not a
+professional heritage-scanning platform, but it supports the same
+principle at a smaller scale: physical spaces and objects can be
+captured, reconstructed, inspected, and preserved digitally.</p>
+<p>Kagaba’s work on digital humanities and cultural artifacts gives an
+academic Ugandan context for digitization, visualization, and
+preservation. It supports the idea that 3D reconstruction is not only a
+technical activity but also a cultural and educational activity. For
+ISBAT University and similar institutions, a project like S.P.E.C.T.R.A
+can help students understand how computer vision, graphics, and digital
+heritage connect.</p>
+<h2 data-number="3.14" id="related-systems-and-tools"><span
+class="header-section-number">3.14</span> 2.14 Related Systems and
+Tools</h2>
+<p>COLMAP is one of the most important open-source tools for Structure
+from Motion and Multi-View Stereo. It provides robust feature
+extraction, matching, sparse reconstruction, dense reconstruction, and
+model export. S.P.E.C.T.R.A is not a replacement for COLMAP. Instead, it
+implements a simplified educational reconstruction pipeline and exports
+data in a COLMAP-style structure for Gaussian Splatting workflows.</p>
+<p>Open3D is a major library for 3D data processing. It supports point
+cloud loading, visualization, downsampling, normal estimation, outlier
+removal, registration, and mesh reconstruction. S.P.E.C.T.R.A uses
+Open3D for point cloud and mesh processing tasks. MeshLab and
+CloudCompare are external tools that can be used to inspect outputs such
+as PLY and OBJ files. These tools are useful for validating the
+dashboard’s viewer and checking whether the exported files are usable
+outside the application.</p>
+<p>Dr. Florent Poux’s 3D Geodata Academy and related point cloud
+materials are relevant because they emphasize practical 3D data
+workflows, point cloud processing, reality capture, and Python-based 3D
+geodata handling. These resources support the educational framing of
+S.P.E.C.T.R.A as a practical learning system rather than a black-box
+reconstruction product.</p>
+<p>Stanford resources, including the Stanford 3D Scanning Repository and
+computer vision materials, provide useful background on 3D data, point
+clouds, meshes, and reconstruction. MIT’s Vision Book provides
+accessible explanations of multiview geometry, camera models, and
+reconstruction concepts. These academic resources strengthen the
+theoretical basis for the report and support the methodology used in
+later chapters.</p>
+<h2 data-number="3.15" id="literature-review-summary-table"><span
+class="header-section-number">3.15</span> 2.15 Literature Review Summary
+Table</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Source Category</th>
+<th>Source</th>
+<th>Main Idea</th>
+<th>Relevance to S.P.E.C.T.R.A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Global SfM</td>
+<td>Smith, Carrivick, and Quincey (2016)</td>
+<td>SfM-MVS can democratize 3D survey workflows but depends on capture
+quality and transparency</td>
+<td>Supports smartphone image reconstruction and stage visibility</td>
+</tr>
+<tr>
+<td>Global SfM system</td>
+<td>Schonberger and Frahm (2016)</td>
+<td>Robust SfM requires reliable matching, triangulation, and
+optimization</td>
+<td>Supports sparse reconstruction design</td>
+</tr>
+<tr>
+<td>Feature detection</td>
+<td>Rublee et al. (2011)</td>
+<td>ORB provides efficient binary features</td>
+<td>Supports frame selection and pose recovery</td>
+</tr>
+<tr>
+<td>Monocular depth</td>
+<td>Yang et al. (2024)</td>
+<td>Depth Anything V2 provides strong monocular depth estimation</td>
+<td>Supports dense depth map generation</td>
+</tr>
+<tr>
+<td>Clustering</td>
+<td>Ester et al. (1996)</td>
+<td>DBSCAN detects density-based clusters and noise</td>
+<td>Supports point cloud cleanup</td>
+</tr>
+<tr>
+<td>Meshing</td>
+<td>Kazhdan et al. (2006)</td>
+<td>Poisson reconstruction creates surfaces from oriented points</td>
+<td>Supports mesh generation</td>
+</tr>
+<tr>
+<td>3D processing library</td>
+<td>Zhou, Park, and Koltun (2018)</td>
+<td>Open3D supports modern 3D data processing</td>
+<td>Supports implementation choices</td>
+</tr>
+<tr>
+<td>Neural rendering</td>
+<td>Kerbl et al. (2023)</td>
+<td>3D Gaussian Splatting enables real-time radiance field
+rendering</td>
+<td>Supports Gaussian export</td>
+</tr>
+<tr>
+<td>African low-cost SfM</td>
+<td>Dandois and Ellis (2017)</td>
+<td>Low-cost SfM can support developing-country monitoring</td>
+<td>Supports accessibility motivation</td>
+</tr>
+<tr>
+<td>Uganda digital context</td>
+<td>Kagaba (2024), CyArk Kasubi resources</td>
+<td>3D digitization supports cultural artifact analysis and
+preservation</td>
+<td>Supports local relevance</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="3.16" id="conceptual-framework"><span
+class="header-section-number">3.16</span> 2.16 Conceptual Framework</h2>
+<pre class="mermaid"><code>flowchart TD
+    A[Accessible capture device] --&gt; B[Overlapping images]
+    B --&gt; C[Feature evidence&lt;br/&gt;SfM]
+    B --&gt; D[Depth evidence&lt;br/&gt;Monocular depth]
+    C --&gt; E[Camera poses]
+    D --&gt; F[Dense depth maps]
+    E --&gt; G[Fused 3D point cloud]
+    F --&gt; G
+    G --&gt; H[Cleaned cloud]
+    H --&gt; I[Mesh and exports]
+    I --&gt; J[Inspection, evaluation, preservation, reuse]</code></pre>
+<p><strong>Figure 2: Conceptual Framework Linking Literature to the
+Project</strong></p>
+<p>The conceptual framework shows that S.P.E.C.T.R.A is built on two
+forms of image evidence. The first is feature evidence, which supports
+camera pose recovery and sparse geometry through SfM. The second is
+depth evidence, which supports dense reconstruction through monocular
+depth estimation. These two evidence streams meet in the fusion stage,
+where depth maps are placed into a shared coordinate system using
+recovered poses. The cleaned point cloud then becomes the basis for mesh
+generation, export, visualization, and evaluation.</p>
+<p><strong>Page 15</strong></p>
+<h2 data-number="3.17" id="critical-review"><span
+class="header-section-number">3.17</span> 2.17 Critical Review</h2>
+<p>The literature strongly supports low-cost image-based reconstruction,
+but it also warns that results depend on capture quality and validation.
+A smartphone image sequence may fail if it has motion blur, poor
+lighting, insufficient overlap, textureless surfaces, strong
+reflections, or large calibration mismatch. S.P.E.C.T.R.A therefore
+includes frame filtering and calibration loading, but these controls
+should be improved before final deployment.</p>
+<p>The literature also suggests that no single reconstruction method is
+perfect. SfM produces reliable geometric constraints but may remain
+sparse. Monocular depth produces dense cues but may lack true metric
+scale. Poisson meshing can create smooth surfaces but may fill gaps
+unrealistically. Gaussian Splatting can produce compelling novel-view
+rendering but requires well-posed images and a suitable training/export
+structure.</p>
+<p>S.P.E.C.T.R.A combines these methods as a practical prototype. The
+system is strongest as a guided reconstruction, visualization, and
+evaluation tool. Its main limitation is that some values in the current
+evaluation are mock values and must be replaced with measured,
+repeatable experiment results. A final evaluation should include
+repeated runs, measured dimensions, external inspection in MeshLab or
+CloudCompare, and comparison against at least one established
+reconstruction tool where feasible.</p>
+<h2 data-number="3.18" id="literature-gap"><span
+class="header-section-number">3.18</span> 2.18 Literature Gap</h2>
+<p>The reviewed literature provides strong algorithms and mature tools,
+but a gap remains for an integrated educational workflow that is
+accessible to students using ordinary smartphone images. Professional
+tools can be powerful but may hide intermediate reasoning. Research
+papers can explain theory but may not provide a complete local
+prototype. S.P.E.C.T.R.A addresses this gap by making the reconstruction
+process staged, inspectable, and exportable.</p>
+<p>The project therefore contributes an implementation-focused bridge
+between theory and practice. It does not claim to outperform COLMAP,
+LiDAR systems, or commercial photogrammetry products. Its value is that
+it combines important ideas from the literature into one understandable
+workflow: frame selection, keyframe preparation, monocular depth
+estimation, sparse SfM, pose-aligned fusion, cleanup, Poisson meshing,
+evaluation, visualization, and Gaussian Splatting export.</p>
+<h2 data-number="3.19" id="chapter-summary"><span
+class="header-section-number">3.19</span> 2.19 Chapter Summary</h2>
+<p>This chapter has shown that S.P.E.C.T.R.A is supported by established
+work in photogrammetry, Structure from Motion, feature detection,
+calibration, monocular depth estimation, point cloud processing, mesh
+reconstruction, and neural rendering. It has also shown that African and
+Ugandan contexts make low-cost 3D documentation meaningful for
+education, heritage, mapping, and local digital innovation. The next
+chapter uses these ideas to explain the implemented methodology of the
+project.</p>
+<p><strong>Page 17</strong></p>
+<h1 data-number="4" id="chapter-3-methodology"><span
+class="header-section-number">4</span> Chapter 3: Methodology</h1>
+<h2 data-number="4.1" id="methodology-overview"><span
+class="header-section-number">4.1</span> 3.1 Methodology Overview</h2>
+<p>The methodology follows the same structure as the implemented
+pipeline. The system begins with image capture and dataset organization,
+then performs selection, preparation, depth estimation, sparse
+reconstruction, dense fusion, cleanup, meshing, evaluation, and export.
+Each step produces a file-based output that becomes the input to the
+next stage.</p>
+<pre class="mermaid"><code>flowchart LR
+    A[Capture] --&gt; B[Select]
+    B --&gt; C[Prepare]
+    C --&gt; D[Estimate Depth]
+    C --&gt; E[Recover Poses]
+    D --&gt; F[Fuse Dense Cloud]
+    E --&gt; F
+    F --&gt; G[Clean Noise]
+    G --&gt; H[Generate Mesh]
+    H --&gt; I[Evaluate]
+    I --&gt; J[Export]</code></pre>
+<p><strong>Figure 3: Methodology Flow from Capture to
+Export</strong></p>
+<p>The real evaluation dataset is an indoor kitchen captured with
+smartphone images. The mock evaluation data records 35 input frames and
+25 prepared keyframes. The synthetic evaluation uses procedural scenes
+representing an indoor room, ALS terrain, and an urban environment.</p>
+<p><strong>Page 18</strong></p>
+<h2 data-number="4.2" id="development-environment"><span
+class="header-section-number">4.2</span> 3.2 Development
+Environment</h2>
+<p>The project is implemented in Python. The active interface is
+Streamlit, and the main entry point is:</p>
+<pre class="text"><code>spectra_dashboard/main.py</code></pre>
+<p>The setup scripts are:</p>
+<pre class="text"><code>setup.bat
+setup.sh
+start_dashboard.bat
+start_dashboard.sh</code></pre>
+<p>The declared Python dependencies in <code>requirements.txt</code>
+are:</p>
+<table>
+<thead>
+<tr>
+<th>Dependency</th>
+<th style="text-align: right;">Version</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>streamlit</td>
+<td style="text-align: right;">1.35.0</td>
+<td>Dashboard interface</td>
+</tr>
+<tr>
+<td>streamlit-autorefresh</td>
+<td style="text-align: right;">0.0.1</td>
+<td>Pipeline status refresh</td>
+</tr>
+<tr>
+<td>numpy</td>
+<td style="text-align: right;">1.24.0</td>
+<td>Numerical computation</td>
+</tr>
+<tr>
+<td>open3d</td>
+<td style="text-align: right;">0.17.0</td>
+<td>Point cloud and mesh processing</td>
+</tr>
+</tbody>
+</table>
+<p>The code also uses additional practical dependencies that should be
+included in a complete environment file:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dependency</th>
+<th>Used By</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>opencv-python</td>
+<td>capture, SfM, fusion, calibration</td>
+<td>Image reading, ORB, feature matching, geometry</td>
+</tr>
+<tr>
+<td>torch</td>
+<td>depth estimation</td>
+<td>Deep learning runtime</td>
+</tr>
+<tr>
+<td>transformers</td>
+<td>depth estimation</td>
+<td>Hugging Face model loading</td>
+</tr>
+<tr>
+<td>pandas</td>
+<td>dashboard metrics</td>
+<td>Tabular dashboard display</td>
+</tr>
+<tr>
+<td>plotly</td>
+<td>dashboard viewer</td>
+<td>3D point cloud and radial charts</td>
+</tr>
+<tr>
+<td>pillow</td>
+<td>optional HEIC fallback</td>
+<td>Image decoding</td>
+</tr>
+<tr>
+<td>pillow-heif</td>
+<td>optional HEIC support</td>
+<td>iPhone HEIC image reading</td>
+</tr>
+<tr>
+<td>plyfile</td>
+<td>Gaussian Splatting environment</td>
+<td>PLY handling</td>
+</tr>
+<tr>
+<td>torchvision</td>
+<td>Gaussian Splatting environment</td>
+<td>PyTorch image support</td>
+</tr>
+<tr>
+<td>tqdm</td>
+<td>Gaussian Splatting environment</td>
+<td>Progress bars</td>
+</tr>
+</tbody>
+</table>
+<p>The separate <code>gaussian-splatting/environment.yml</code> uses
+Python 3.7.13, PyTorch 1.12.1, CUDA Toolkit 11.6, <code>plyfile</code>,
+OpenCV, <code>joblib</code>, and custom submodules for differentiable
+Gaussian rasterization, nearest-neighbor search, and fused SSIM.</p>
+<p><strong>Page 19</strong></p>
+<h2 data-number="4.3" id="dataset-and-resource-preparation"><span
+class="header-section-number">4.3</span> 3.3 Dataset and Resource
+Preparation</h2>
+<p>The project uses a structured <code>data</code> directory:</p>
+<pre class="text"><code>data/
+|-- raw_phone/                 raw smartphone images
+|-- selected/                  selected diverse frames
+|-- keyframes/                 resized prepared keyframes
+|-- calibration/               checkerboard calibration images
+|-- camera_intrinsics*.json    camera calibration files
+|-- results/
+|   |-- depth/                 depth .npy files and PNG previews
+|   |-- synthetic/             synthetic baseline outputs
+|   |-- sparse_cloud.ply
+|   |-- camera_poses.json
+|   |-- dense_fused_cloud.ply
+|   |-- dense_fused_cloud_pose_aligned.ply
+|   |-- dense_fused_cloud_clean.ply
+|   |-- mesh_poisson.ply
+|   `-- mesh_poisson.obj
+`-- gaussian_splatting_scene/
+    |-- images/
+    `-- sparse/0/</code></pre>
+<p>The raw dataset used for the mock evaluation contains 35 smartphone
+images. The selected and prepared keyframe sets represent the cleaner
+subset used by the reconstruction pipeline. The synthetic resources
+include three scene types: indoor room, terrain, and urban environment.
+These synthetic outputs are useful because they provide controlled
+baselines that are not affected by real camera blur, exposure changes,
+or calibration mismatch.</p>
+<h2 data-number="4.4" id="dashboard-design-method"><span
+class="header-section-number">4.4</span> 3.4 Dashboard Design
+Method</h2>
+<p>The dashboard is organized into seven pages:</p>
+<ol type="1">
+<li>Guide: operator explanation and status.</li>
+<li>Upload: dataset selection and image ingestion.</li>
+<li>Pipeline: nine-stage reconstruction control.</li>
+<li>3D Viewer: point cloud visualization.</li>
+<li>Compare: side-by-side reconstruction comparison.</li>
+<li>Metrics: quality indicators and stage timing.</li>
+<li>Export: output readiness and download controls.</li>
+</ol>
+<p>The sidebar is fixed, and the active page is stored in Streamlit
+session state. The dashboard uses custom CSS for a technical dark
+interface and Plotly for browser-based 3D rendering.</p>
+<p><strong>Page 20</strong></p>
+<h2 data-number="4.5" id="stage-1-smart-frame-selection"><span
+class="header-section-number">4.5</span> 3.5 Stage 1: Smart Frame
+Selection</h2>
+<p>The first backend stage is:</p>
+<pre class="text"><code>src/utils/smart_frame_selector.py</code></pre>
+<p>It supports two input modes:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/utils/smart_frame_selector.py <span class="at">--mode</span> images</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/utils/smart_frame_selector.py <span class="at">--mode</span> video <span class="at">--video_path</span> data/video/capture.mp4</span></code></pre></div>
+<p>For image mode, the input folder is:</p>
+<pre class="text"><code>data/raw_phone</code></pre>
+<p>The output folder is:</p>
+<pre class="text"><code>data/selected</code></pre>
+<p>The selector applies three main filters:</p>
+<ol type="1">
+<li>ORB feature count to reject blurry or textureless frames.</li>
+<li>Perceptual hash distance to reject near-duplicate viewpoints.</li>
+<li>Histogram difference to reject redundant exposure and color
+conditions.</li>
+</ol>
+<p>Frames are also scored by sharpness and feature richness. The maximum
+number of selected frames is configured as 30, while the preparation
+stage later keeps up to 25 keyframes. The minimum feature point
+threshold is 300. This stage is important because reconstruction quality
+depends strongly on image diversity, sharpness, overlap, and
+texture.</p>
+<h2 data-number="4.6" id="stage-2-keyframe-preparation"><span
+class="header-section-number">4.6</span> 3.6 Stage 2: Keyframe
+Preparation</h2>
+<p>The second backend stage is:</p>
+<pre class="text"><code>src/capture/prepare_keyframes_from_folder.py</code></pre>
+<p>It reads from:</p>
+<pre class="text"><code>data/selected</code></pre>
+<p>and writes to:</p>
+<pre class="text"><code>data/keyframes</code></pre>
+<p>The script resizes images to 960 by 720 pixels and applies a
+Laplacian sharpness threshold. It renames outputs consistently as:</p>
+<pre class="text"><code>frame_000.jpg
+frame_001.jpg
+...</code></pre>
+<p>This standardization makes downstream depth, SfM, fusion, and export
+scripts easier to coordinate.</p>
+<p><strong>Page 21</strong></p>
+<h2 data-number="4.7" id="stage-3-depth-estimation"><span
+class="header-section-number">4.7</span> 3.7 Stage 3: Depth
+Estimation</h2>
+<p>The third backend stage is:</p>
+<pre class="text"><code>src/depth/midas_depth.py</code></pre>
+<p>Although the filename contains <code>midas</code>, the implementation
+uses Depth Anything V2 through Hugging Face Transformers:</p>
+<pre class="text"><code>depth-anything/Depth-Anything-V2-Small-hf</code></pre>
+<p>The script reads prepared keyframes from:</p>
+<pre class="text"><code>data/keyframes</code></pre>
+<p>and writes depth outputs to:</p>
+<pre class="text"><code>data/results/depth</code></pre>
+<p>For each keyframe, it saves:</p>
+<pre class="text"><code>frame_XXX_depth.npy
+frame_XXX_depth.png</code></pre>
+<p>The <code>.npy</code> files preserve numeric depth predictions for
+computation. The <code>.png</code> files are colorized previews for
+visual inspection. The script automatically uses CUDA when
+available:</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>torch.device(<span class="st">&quot;cuda&quot;</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">&quot;cpu&quot;</span>)</span></code></pre></div>
+<p>The method is efficient for a prototype because it avoids needing a
+depth camera. However, model output should be understood as relative
+depth unless calibrated against metric reference data.</p>
+<p><strong>Page 22</strong></p>
+<h2 data-number="4.8" id="stage-4-sparse-reconstruction"><span
+class="header-section-number">4.8</span> 3.8 Stage 4: Sparse
+Reconstruction</h2>
+<p>The fourth backend stage is:</p>
+<pre class="text"><code>src/sfm/sparse_recon_live.py --no_view</code></pre>
+<p>This stage estimates sparse camera motion and sparse 3D points. The
+main steps are:</p>
+<ol type="1">
+<li>Load prepared keyframes.</li>
+<li>Load depth maps for scale assistance.</li>
+<li>Load camera calibration or fallback intrinsics.</li>
+<li>Detect ORB keypoints and descriptors.</li>
+<li>Match descriptors between consecutive frames.</li>
+<li>Use Lowe-style ratio filtering.</li>
+<li>Estimate the essential matrix with RANSAC.</li>
+<li>Recover relative camera pose.</li>
+<li>Triangulate sparse 3D points.</li>
+<li>Estimate and stabilize translation scale using depth maps.</li>
+<li>Save sparse cloud and camera poses.</li>
+</ol>
+<p>The main outputs are:</p>
+<pre class="text"><code>data/results/sparse_cloud.ply
+data/results/camera_poses.json</code></pre>
+<p>The system stores per-frame pose information including rotation,
+translation, matches, inliers, pose inliers, raw scale, stabilized
+scale, scale support, dense fusion score, and whether the pose is strong
+enough for dense fusion.</p>
+<h2 data-number="4.9" id="camera-calibration-method"><span
+class="header-section-number">4.9</span> 3.9 Camera Calibration
+Method</h2>
+<p>Camera calibration is handled by:</p>
+<pre class="text"><code>src/depth/depth_utils.py</code></pre>
+<p>The system checks zoom-specific calibration files first:</p>
+<pre class="text"><code>data/camera_intrinsics_1x.json
+data/camera_intrinsics_2x.json</code></pre>
+<p>Then it falls back to:</p>
+<pre class="text"><code>data/camera_intrinsics.json
+data/results/camera_intrinsics.json</code></pre>
+<p>If no calibration is available, it generates synthetic fallback
+intrinsics. Calibration can also be adapted to different image sizes and
+orientations. If calibration dimensions do not match the reconstruction
+image dimensions, the system warns that fallback intrinsics may degrade
+reconstruction quality.</p>
+<p><strong>Page 23</strong></p>
+<h2 data-number="4.10" id="stage-5-dense-depth-fusion"><span
+class="header-section-number">4.10</span> 3.10 Stage 5: Dense Depth
+Fusion</h2>
+<p>The fifth backend stage is:</p>
+<pre class="text"><code>src/fusion/depth_fusion.py --no_view --remove_plane</code></pre>
+<p>This stage combines depth maps and camera poses into a dense,
+pose-aligned point cloud. The process is:</p>
+<ol type="1">
+<li>Load <code>camera_poses.json</code>.</li>
+<li>Load prepared keyframes.</li>
+<li>Load matching depth maps.</li>
+<li>Compute a shared sequence depth range.</li>
+<li>Convert Depth Anything output into pseudo-metric distance.</li>
+<li>Back-project selected depth pixels into 3D rays using camera
+intrinsics.</li>
+<li>Transform local points into world coordinates using recovered
+poses.</li>
+<li>Optionally refine alignment with ICP.</li>
+<li>Downsample and remove statistical outliers with Open3D.</li>
+<li>Optionally remove a dominant plane when <code>--remove_plane</code>
+is used.</li>
+<li>Translate the cloud to its center.</li>
+<li>Save the fused point cloud.</li>
+</ol>
+<p>The main output is:</p>
+<pre class="text"><code>data/results/dense_fused_cloud_pose_aligned.ply</code></pre>
+<p>The fusion code uses thresholds and tuning parameters for point
+count, depth clipping, elliptical crop region, voxel size, ICP
+correspondence distance, and ICP fitness. These parameters are important
+because they affect the density and cleanliness of the final cloud.</p>
+<p><strong>Page 24</strong></p>
+<h2 data-number="4.11" id="stage-6-noise-cleanup"><span
+class="header-section-number">4.11</span> 3.11 Stage 6: Noise
+Cleanup</h2>
+<p>The sixth backend stage is:</p>
+<pre class="text"><code>src/utils/cleanup.py</code></pre>
+<p>The cleanup script reads:</p>
+<pre class="text"><code>data/results/dense_fused_cloud_pose_aligned.ply</code></pre>
+<p>It applies DBSCAN clustering with:</p>
+<pre class="text"><code>eps = 0.05
+min_points = 10</code></pre>
+<p>Then it keeps the largest cluster and writes:</p>
+<pre class="text"><code>data/results/dense_fused_cloud_clean.ply</code></pre>
+<p>This method is simple and effective for demonstration because many
+reconstruction artifacts appear as disconnected outlier clusters.
+Keeping the largest cluster removes isolated noise while preserving the
+main reconstructed object or scene. However, it may remove legitimate
+disconnected components if the scene naturally contains separate
+objects. A future version should provide interactive cleanup options or
+adaptive clustering.</p>
+<h2 data-number="4.12" id="stage-7-surface-meshing"><span
+class="header-section-number">4.12</span> 3.12 Stage 7: Surface
+Meshing</h2>
+<p>The seventh backend stage is:</p>
+<pre class="text"><code>src/mesh/mesh_surface.py</code></pre>
+<p>It loads the cleaned cloud if available, otherwise it falls back to
+the pose-aligned fused cloud. It then:</p>
+<ol type="1">
+<li>Optionally voxel-downsamples the point cloud.</li>
+<li>Estimates normals with a radius-based neighbor search.</li>
+<li>Orients normals consistently.</li>
+<li>Runs Poisson surface reconstruction.</li>
+<li>Trims low-density vertices.</li>
+<li>Removes degenerate triangles, duplicate triangles, duplicate
+vertices, and non-manifold edges.</li>
+<li>Computes vertex normals.</li>
+<li>Saves mesh outputs.</li>
+</ol>
+<p>The output files are:</p>
+<pre class="text"><code>data/results/mesh_poisson.ply
+data/results/mesh_poisson.obj</code></pre>
+<p><strong>Page 25</strong></p>
+<h2 data-number="4.13" id="stage-8-evaluation"><span
+class="header-section-number">4.13</span> 3.13 Stage 8: Evaluation</h2>
+<p>The eighth backend stage is:</p>
+<pre class="text"><code>src/utils/evaluate_reconstruction.py</code></pre>
+<p>This stage counts points in available reconstruction outputs and
+prints a comparative report. It compares:</p>
+<ol type="1">
+<li>Sparse cloud.</li>
+<li>Single dense cloud if available.</li>
+<li>Fused dense cloud.</li>
+</ol>
+<p>The evaluation script is currently basic but useful. It demonstrates
+whether expected outputs exist, whether they contain points, and how
+point counts compare. The dashboard extends this with mock quality
+indicators such as reconstruction score, RMS error, coverage, overlap,
+confidence, density, and processing time.</p>
+<p>For final academic evaluation, this stage should be expanded to
+compute measured metrics, such as:</p>
+<ol type="1">
+<li>Reprojection error per frame.</li>
+<li>Camera pose recovery rate.</li>
+<li>Point cloud density per bounding volume.</li>
+<li>Mesh vertex and face counts.</li>
+<li>Outlier removal percentage.</li>
+<li>Cloud-to-cloud distance against a reference model.</li>
+<li>Completeness and coverage.</li>
+<li>Repeatability across repeated captures.</li>
+</ol>
+<h2 data-number="4.14" id="stage-9-gaussian-splatting-export"><span
+class="header-section-number">4.14</span> 3.14 Stage 9: Gaussian
+Splatting Export</h2>
+<p>The ninth backend stage is:</p>
+<pre class="text"><code>src/export/gaussian_export.py</code></pre>
+<p>It exports a dataset compatible with Gaussian Splatting style input.
+It creates:</p>
+<pre class="text"><code>data/gaussian_splatting_scene/images/
+data/gaussian_splatting_scene/sparse/0/cameras.txt
+data/gaussian_splatting_scene/sparse/0/images.txt
+data/gaussian_splatting_scene/sparse/0/points3D.txt</code></pre>
+<p>The exporter copies or undistorts images, converts camera rotations
+to COLMAP-style quaternions, writes camera intrinsics, writes image pose
+records, and writes sparse 3D points. This allows the reconstructed
+image sequence to be used as input for neural rendering workflows.</p>
+<p><strong>Page 26</strong></p>
+<h2 data-number="4.15" id="dashboard-pipeline-definition"><span
+class="header-section-number">4.15</span> 3.15 Dashboard Pipeline
+Definition</h2>
+<p>The dashboard defines nine visible stages:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: right;">No.</th>
+<th>Stage Key</th>
+<th>Stage Name</th>
+<th>Expected Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>keyframes</td>
+<td>Keyframe Extraction</td>
+<td><code>data/selected/*.jpg</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>prepare</td>
+<td>Prepare Keyframes</td>
+<td><code>data/keyframes/*.jpg</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>depth</td>
+<td>Depth Estimation</td>
+<td><code>data/results/depth/*_depth.npy</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>sfm</td>
+<td>SfM Sparse Reconstruction</td>
+<td><code>data/results/sparse_cloud.ply</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>fusion</td>
+<td>Depth Fusion to Point Cloud</td>
+<td>dense fused cloud PLY</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>cleanup</td>
+<td>Noise Cleanup</td>
+<td>cleaned PLY</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>mesh</td>
+<td>Surface Meshing</td>
+<td>mesh PLY and OBJ</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>evaluation</td>
+<td>Evaluation</td>
+<td>console evaluation report</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>gaussian</td>
+<td>Gaussian Splatting Export</td>
+<td>Gaussian scene folder</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>sequenceDiagram
+    participant U as User
+    participant D as Dashboard
+    participant S as Backend Script
+    participant F as File System
+    U-&gt;&gt;D: Click Run stage
+    D-&gt;&gt;S: Execute command with subprocess
+    S-&gt;&gt;F: Read stage input files
+    S-&gt;&gt;F: Write stage output files
+    S--&gt;&gt;D: Return code and timing
+    D-&gt;&gt;D: Update session_state
+    D--&gt;&gt;U: Show status, metrics, and next stage</code></pre>
+<p><strong>Figure 4: Dashboard Stage Execution Model</strong></p>
+<p><strong>Page 27</strong></p>
+<h2 data-number="4.16" id="visualization-method"><span
+class="header-section-number">4.16</span> 3.16 Visualization Method</h2>
+<p>The dashboard visualizes point clouds through Plotly. Point
+coordinates and colors are loaded from PLY files with Open3D. The Plotly
+renderer displays 3D scatter markers that can be rotated, zoomed, and
+inspected in the browser.</p>
+<p>The 3D Viewer supports:</p>
+<ol type="1">
+<li>Real reconstruction clouds.</li>
+<li>Synthetic scene clouds.</li>
+<li>Raw, cleaned, and mesh source loading.</li>
+<li>Auto-loading the best available cloud.</li>
+<li>Reconstruction playback for synthetic scenes.</li>
+</ol>
+<p>The Compare page provides side-by-side visual comparison modes:</p>
+<ol type="1">
+<li>Sparse vs Dense.</li>
+<li>Raw vs Cleaned.</li>
+<li>Mesh vs Gaussian.</li>
+<li>Synthetic vs Real.</li>
+</ol>
+<p>These comparison views are important because reconstruction quality
+is visual as well as numerical. A point cloud can have many points and
+still be poorly aligned. A mesh can have many faces and still be noisy.
+Visual inspection remains a necessary part of evaluation.</p>
+<h2 data-number="4.17" id="metrics-method"><span
+class="header-section-number">4.17</span> 3.17 Metrics Method</h2>
+<p>The Metrics page uses four main dashboard tiles:</p>
+<ol type="1">
+<li>Reconstruction score.</li>
+<li>Points generated.</li>
+<li>Noise reduction.</li>
+<li>RMS error.</li>
+</ol>
+<p>It also shows radial quality indicators:</p>
+<ol type="1">
+<li>Coverage.</li>
+<li>Overlap.</li>
+<li>Confidence.</li>
+<li>Density.</li>
+</ol>
+<p>Stage timing is shown when the pipeline has recorded execution time
+in <code>st.session_state["stage_times"]</code>. The current mock
+evaluation uses the timing table stored in
+<code>MOCK_EVALUATION_DATA.md</code>.</p>
+<p><strong>Page 28</strong></p>
+<h2 data-number="4.18" id="export-method"><span
+class="header-section-number">4.18</span> 3.18 Export Method</h2>
+<p>The Export page checks whether expected outputs exist and provides
+download controls. Supported export categories are:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Format</th>
+<th>File or Folder</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PLY point cloud</td>
+<td>dense or cleaned cloud</td>
+<td>Point cloud inspection</td>
+</tr>
+<tr>
+<td>PLY mesh</td>
+<td><code>mesh_poisson.ply</code></td>
+<td>Mesh visualization</td>
+</tr>
+<tr>
+<td>OBJ mesh</td>
+<td><code>mesh_poisson.obj</code></td>
+<td>Blender, MeshLab, Unity, Unreal workflows</td>
+</tr>
+<tr>
+<td>Gaussian scene</td>
+<td><code>data/gaussian_splatting_scene/</code></td>
+<td>Neural rendering pipeline input</td>
+</tr>
+<tr>
+<td>GLTF</td>
+<td>Not currently mapped</td>
+<td>Future web 3D export</td>
+</tr>
+</tbody>
+</table>
+<p>The current dashboard lists GLTF as an expected format, but no
+<code>BACKEND_OUTPUTS</code> path currently maps a GLTF file. This is an
+implementation gap and should be addressed as a future enhancement.</p>
+<h2 data-number="4.19" id="testing-method"><span
+class="header-section-number">4.19</span> 3.19 Testing Method</h2>
+<p>Testing was based on file existence, point count inspection,
+synthetic output generation, visual dashboard inspection, and mock
+evaluation criteria. The acceptance criteria include:</p>
+<ol type="1">
+<li>Minimum input images: 8.</li>
+<li>Minimum selected keyframes: 8.</li>
+<li>Sparse cloud exists.</li>
+<li>Dense cloud exists.</li>
+<li>Cleaned cloud exists.</li>
+<li>Mesh exists.</li>
+<li>Reconstruction score at least 80 percent.</li>
+<li>RMS error no greater than 1.00 pixel.</li>
+<li>Noise reduction at least 20 percent.</li>
+<li>At least three export formats ready.</li>
+</ol>
+<p>The mock result passes all listed criteria. However, final testing
+should replace mock values with measured values from repeated runs.</p>
+<p><strong>Page 29</strong></p>
+<h2 data-number="4.20" id="resources-required"><span
+class="header-section-number">4.20</span> 3.20 Resources Required</h2>
+<h3 data-number="4.20.1" id="hardware-resources"><span
+class="header-section-number">4.20.1</span> Hardware Resources</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Minimum</th>
+<th>Recommended</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>Modern dual-core</td>
+<td>Quad-core or better</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>8 GB</td>
+<td>16 GB or more</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>Optional</td>
+<td>NVIDIA GPU with CUDA for faster depth estimation</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>5 GB free</td>
+<td>20 GB or more for multiple datasets</td>
+</tr>
+<tr>
+<td>Camera</td>
+<td>Smartphone camera</td>
+<td>Smartphone with stable exposure and high-resolution photos</td>
+</tr>
+</tbody>
+</table>
+<h3 data-number="4.20.2" id="software-resources"><span
+class="header-section-number">4.20.2</span> Software Resources</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>Main programming language</td>
+</tr>
+<tr>
+<td>Streamlit</td>
+<td>Dashboard interface</td>
+</tr>
+<tr>
+<td>OpenCV</td>
+<td>Image processing and geometry</td>
+</tr>
+<tr>
+<td>Open3D</td>
+<td>Point cloud and mesh processing</td>
+</tr>
+<tr>
+<td>PyTorch</td>
+<td>Deep learning inference</td>
+</tr>
+<tr>
+<td>Hugging Face Transformers</td>
+<td>Depth Anything V2 model loading</td>
+</tr>
+<tr>
+<td>Plotly</td>
+<td>3D browser visualization</td>
+</tr>
+<tr>
+<td>MeshLab or CloudCompare</td>
+<td>External visual validation</td>
+</tr>
+<tr>
+<td>Blender</td>
+<td>OBJ mesh inspection and rendering</td>
+</tr>
+<tr>
+<td>Gaussian Splatting repository</td>
+<td>Neural rendering export/training target</td>
+</tr>
+</tbody>
+</table>
+<h3 data-number="4.20.3" id="data-resources"><span
+class="header-section-number">4.20.3</span> Data Resources</h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Smartphone image sequence</td>
+<td>Real reconstruction input</td>
+</tr>
+<tr>
+<td>Calibration images</td>
+<td>Intrinsic calibration</td>
+</tr>
+<tr>
+<td>Synthetic scene outputs</td>
+<td>Baseline comparison</td>
+</tr>
+<tr>
+<td>Mock evaluation document</td>
+<td>Report and supervisor review data</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Page 30</strong></p>
+<h1 data-number="5" id="chapter-4-results-and-discussion"><span
+class="header-section-number">5</span> Chapter 4: Results and
+Discussion</h1>
+<h2 data-number="5.1" id="results-overview"><span
+class="header-section-number">5.1</span> 4.1 Results Overview</h2>
+<p>The current project contains both real reconstruction outputs and
+synthetic baseline outputs. The real reconstruction is based on an
+indoor kitchen smartphone image sequence. The synthetic baselines
+include indoor room, ALS terrain, and urban scene outputs.</p>
+<p>The mock evaluation record reports:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input frames</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr>
+<td>Selected keyframes</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr>
+<td>Pipeline stages</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td>Complete stages</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td>Total mock processing time</td>
+<td style="text-align: right;">236.76 seconds</td>
+</tr>
+<tr>
+<td>Reconstruction score</td>
+<td style="text-align: right;">90 percent</td>
+</tr>
+<tr>
+<td>RMS reprojection error</td>
+<td style="text-align: right;">0.74 pixels</td>
+</tr>
+<tr>
+<td>Noise reduction</td>
+<td style="text-align: right;">31 percent</td>
+</tr>
+<tr>
+<td>Coverage</td>
+<td style="text-align: right;">92 percent</td>
+</tr>
+<tr>
+<td>Overlap quality</td>
+<td style="text-align: right;">86 percent</td>
+</tr>
+<tr>
+<td>Density score</td>
+<td style="text-align: right;">88 percent</td>
+</tr>
+</tbody>
+</table>
+<p>The result indicates that the prototype can demonstrate a complete
+reconstruction workflow from image ingestion to export. The strongest
+evidence is the presence of output files in <code>data/results</code>
+and the synthetic metrics JSON files.</p>
+<p><strong>Page 31</strong></p>
+<h2 data-number="5.2" id="pipeline-timing-results"><span
+class="header-section-number">5.2</span> 4.2 Pipeline Timing
+Results</h2>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 23%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: right;">Stage No.</th>
+<th>Stage Key</th>
+<th>Stage Name</th>
+<th style="text-align: right;">Mock Time (s)</th>
+<th>Discussion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>keyframes</td>
+<td>Keyframe Extraction</td>
+<td style="text-align: right;">4.82</td>
+<td>Fast because it mainly filters images</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>prepare</td>
+<td>Prepare Keyframes</td>
+<td style="text-align: right;">3.17</td>
+<td>Fast resizing and blur filtering</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>depth</td>
+<td>Depth Estimation</td>
+<td style="text-align: right;">96.44</td>
+<td>Slowest stage due to deep model inference</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>sfm</td>
+<td>Sparse Reconstruction</td>
+<td style="text-align: right;">28.76</td>
+<td>Moderate time due to feature matching and pose recovery</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>fusion</td>
+<td>Depth Fusion</td>
+<td style="text-align: right;">42.11</td>
+<td>Moderate to high due to depth back-projection and Open3D
+filtering</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>cleanup</td>
+<td>Noise Cleanup</td>
+<td style="text-align: right;">8.93</td>
+<td>Fast clustering compared to depth and fusion</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>mesh</td>
+<td>Surface Meshing</td>
+<td style="text-align: right;">34.58</td>
+<td>Moderate due to normal estimation and Poisson reconstruction</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>evaluation</td>
+<td>Evaluation</td>
+<td style="text-align: right;">2.05</td>
+<td>Fast point count and reporting</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>gaussian</td>
+<td>Gaussian Export</td>
+<td style="text-align: right;">15.90</td>
+<td>Moderate file conversion and export</td>
+</tr>
+</tbody>
+</table>
+<p>The total mock processing time is 236.76 seconds. Depth estimation
+accounts for about 40.7 percent of the total processing time. This is
+expected because each keyframe must pass through a deep neural network
+model. If CUDA is available, this stage should improve significantly
+compared to CPU inference.</p>
+<p><strong>Page 32</strong></p>
+<h2 data-number="5.3" id="real-reconstruction-output-snapshot"><span
+class="header-section-number">5.3</span> 4.3 Real Reconstruction Output
+Snapshot</h2>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th>Output File</th>
+<th>Artifact Type</th>
+<th style="text-align: right;">Vertex Count</th>
+<th style="text-align: right;">Face Count</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sparse_cloud.ply</code></td>
+<td>Sparse point cloud</td>
+<td style="text-align: right;">1,224</td>
+<td style="text-align: right;">N/A</td>
+<td>Available</td>
+</tr>
+<tr>
+<td><code>dense_fused_cloud.ply</code></td>
+<td>Dense fused point cloud</td>
+<td style="text-align: right;">20,987</td>
+<td style="text-align: right;">N/A</td>
+<td>Available</td>
+</tr>
+<tr>
+<td><code>dense_fused_cloud_clean.ply</code></td>
+<td>Cleaned dense point cloud</td>
+<td style="text-align: right;">14,683</td>
+<td style="text-align: right;">N/A</td>
+<td>Available</td>
+</tr>
+<tr>
+<td><code>dense_fused_cloud_pose_aligned.ply</code></td>
+<td>Pose-aligned dense point cloud</td>
+<td style="text-align: right;">88,259</td>
+<td style="text-align: right;">N/A</td>
+<td>Available</td>
+</tr>
+<tr>
+<td><code>mesh_poisson.ply</code></td>
+<td>Poisson mesh</td>
+<td style="text-align: right;">35,196</td>
+<td style="text-align: right;">70,077</td>
+<td>Available</td>
+</tr>
+<tr>
+<td><code>mesh_poisson.obj</code></td>
+<td>OBJ mesh</td>
+<td style="text-align: right;">35,196 mock</td>
+<td style="text-align: right;">70,077 mock</td>
+<td>Available</td>
+</tr>
+</tbody>
+</table>
+<p>The point count progression shows the difference between sparse and
+dense reconstruction. Sparse reconstruction captures only matched
+feature points, while dense fusion back-projects many depth pixels into
+3D space. Cleanup reduces the cloud from 88,259 pose-aligned points to
+14,683 cleaned points by keeping the largest DBSCAN cluster.</p>
+<pre class="mermaid"><code>xychart-beta
+    title &quot;Real Dataset Output Growth&quot;
+    x-axis [&quot;Sparse&quot;, &quot;Dense&quot;, &quot;Clean&quot;, &quot;Pose Aligned&quot;, &quot;Mesh Vertices&quot;]
+    y-axis &quot;Count&quot; 0 --&gt; 90000
+    bar [1224, 20987, 14683, 88259, 35196]</code></pre>
+<p><strong>Figure 5: Real Dataset Output Growth</strong></p>
+<p><strong>Page 33</strong></p>
+<h2 data-number="5.4" id="quality-metrics-discussion"><span
+class="header-section-number">5.4</span> 4.4 Quality Metrics
+Discussion</h2>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 40%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align: right;">Value</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reconstruction score</td>
+<td style="text-align: right;">90 percent</td>
+<td>Good demonstration-level reconstruction confidence</td>
+</tr>
+<tr>
+<td>RMS reprojection error</td>
+<td style="text-align: right;">0.74 px</td>
+<td>Acceptable image-space alignment for prototype evaluation</td>
+</tr>
+<tr>
+<td>Noise reduction</td>
+<td style="text-align: right;">31 percent</td>
+<td>Cleanup removed a significant fraction of noisy points</td>
+</tr>
+<tr>
+<td>Coverage</td>
+<td style="text-align: right;">92 percent</td>
+<td>Strong image coverage after keyframe selection</td>
+</tr>
+<tr>
+<td>Overlap quality</td>
+<td style="text-align: right;">86 percent</td>
+<td>Sufficient overlap for feature matching and fusion</td>
+</tr>
+<tr>
+<td>Density score</td>
+<td style="text-align: right;">88 percent</td>
+<td>Dense cloud is suitable for visual inspection and meshing</td>
+</tr>
+<tr>
+<td>Camera pose recovery</td>
+<td style="text-align: right;">25 / 25</td>
+<td>All selected keyframes estimated successfully</td>
+</tr>
+<tr>
+<td>Export readiness</td>
+<td style="text-align: right;">4 / 5</td>
+<td>PLY, OBJ, mesh PLY, and Gaussian scene available</td>
+</tr>
+</tbody>
+</table>
+<p>These values are marked as mock in the evaluation data. They are
+useful for report preparation and supervisor demonstration, but they
+should not be treated as final measured performance unless reproduced by
+actual evaluation scripts.</p>
+<p>The RMS reprojection error of 0.74 pixels is within the acceptance
+target of 1.00 pixel. This suggests acceptable camera alignment for a
+smartphone-based prototype. However, reprojection error alone does not
+guarantee a correct dense model because depth estimation, scale
+stabilization, and fusion can introduce independent errors.</p>
+<p><strong>Page 34</strong></p>
+<h2 data-number="5.5" id="sparse-vs-dense-output"><span
+class="header-section-number">5.5</span> 4.5 Sparse vs Dense Output</h2>
+<p>The sparse cloud has 1,224 points. The dense fused cloud has 20,987
+points. This means dense fusion increases the point count by
+approximately:</p>
+<pre class="text"><code>20,987 / 1,224 = 17.15x</code></pre>
+<p>This confirms the expected behavior. Sparse SfM is accurate around
+feature matches but cannot represent large textureless surfaces. Dense
+fusion produces a richer visible scene by adding points from depth
+maps.</p>
+<p>However, more points do not automatically mean better geometry. A
+dense cloud can contain incorrectly projected points if depth estimation
+is wrong, camera pose is unstable, or calibration is mismatched. This is
+why cleanup, visual comparison, and mesh inspection are needed.</p>
+<h2 data-number="5.6" id="raw-vs-cleaned-output"><span
+class="header-section-number">5.6</span> 4.6 Raw vs Cleaned Output</h2>
+<p>The pose-aligned dense cloud contains 88,259 points. The cleaned
+dense cloud contains 14,683 points. The mock evaluation interprets this
+as outlier removal and noise reduction. The cleanup stage keeps the
+largest DBSCAN cluster, removing disconnected clusters.</p>
+<p>This result is useful when the main reconstructed object or scene
+forms one dominant cluster. It may be less suitable for complex scenes
+with several separated objects. For example, a table, chair, and wall
+might be valid but disconnected. In such cases, keeping only the largest
+cluster could remove useful geometry. A future enhancement should allow
+the user to choose how many clusters to preserve.</p>
+<p><strong>Page 35</strong></p>
+<h2 data-number="5.7" id="mesh-results"><span
+class="header-section-number">5.7</span> 4.7 Mesh Results</h2>
+<p>The Poisson mesh output contains:</p>
+<table>
+<thead>
+<tr>
+<th>Mesh Output</th>
+<th style="text-align: right;">Vertices</th>
+<th style="text-align: right;">Faces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mesh_poisson.ply</code></td>
+<td style="text-align: right;">35,196</td>
+<td style="text-align: right;">70,077</td>
+</tr>
+<tr>
+<td><code>mesh_poisson.obj</code></td>
+<td style="text-align: right;">35,196 mock</td>
+<td style="text-align: right;">70,077 mock</td>
+</tr>
+</tbody>
+</table>
+<p>Poisson reconstruction is suitable for converting oriented point
+clouds into continuous surfaces. It estimates a surface that fits the
+oriented normals of the point cloud. The method is useful because it can
+create smooth meshes from noisy input, but it can also create artificial
+surfaces in poorly supported areas.</p>
+<p>The project reduces this risk by trimming low-density vertices using
+a density quantile. It also cleans degenerate triangles, duplicate
+triangles, duplicate vertices, and non-manifold edges. The resulting OBJ
+output can be opened in external 3D tools.</p>
+<pre class="mermaid"><code>flowchart TD
+    A[Cleaned point cloud] --&gt; B[Voxel downsample]
+    B --&gt; C[Estimate normals]
+    C --&gt; D[Orient normals]
+    D --&gt; E[Poisson reconstruction]
+    E --&gt; F[Trim low-density vertices]
+    F --&gt; G[Clean mesh topology]
+    G --&gt; H[Export PLY and OBJ]</code></pre>
+<p><strong>Figure 6: Mesh Generation and Cleanup Workflow</strong></p>
+<p><strong>Page 36</strong></p>
+<h2 data-number="5.8" id="synthetic-baseline-results"><span
+class="header-section-number">5.8</span> 4.8 Synthetic Baseline
+Results</h2>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr>
+<th>Scene</th>
+<th style="text-align: right;">Reconstruction Time (s)</th>
+<th style="text-align: right;">Points</th>
+<th style="text-align: right;">Point Density</th>
+<th>Bounding Box (m)</th>
+<th style="text-align: right;">Mesh Vertices</th>
+<th style="text-align: right;">Mesh Triangles</th>
+<th style="text-align: right;">Normal Consistency</th>
+<th>Mesh Completeness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Indoor Room</td>
+<td style="text-align: right;">10.85</td>
+<td style="text-align: right;">54,520</td>
+<td style="text-align: right;">220.9476 per m3</td>
+<td>10.070 x 8.069 x 3.037</td>
+<td style="text-align: right;">88,040</td>
+<td style="text-align: right;">173,014</td>
+<td style="text-align: right;">69.8 percent</td>
+<td>Open surface</td>
+</tr>
+<tr>
+<td>ALS Terrain</td>
+<td style="text-align: right;">12.47</td>
+<td style="text-align: right;">67,419</td>
+<td style="text-align: right;">0.0754 per m3</td>
+<td>199.990 x 199.997 x 22.347</td>
+<td style="text-align: right;">93,679</td>
+<td style="text-align: right;">183,445</td>
+<td style="text-align: right;">91.5 percent</td>
+<td>Open surface</td>
+</tr>
+<tr>
+<td>Urban Scene</td>
+<td style="text-align: right;">12.52</td>
+<td style="text-align: right;">61,161</td>
+<td style="text-align: right;">0.0172 per m3</td>
+<td>300.975 x 299.908 x 39.305</td>
+<td style="text-align: right;">149,734</td>
+<td style="text-align: right;">295,225</td>
+<td style="text-align: right;">85.0 percent</td>
+<td>Open surface</td>
+</tr>
+</tbody>
+</table>
+<p>The synthetic scenes have different scales and densities. The indoor
+room has the highest point density because it covers a smaller volume.
+The terrain and urban scenes cover much larger spaces, so their point
+density per cubic meter is lower even when the total point count is
+high.</p>
+<p>The ALS terrain scene has the highest normal consistency at 91.5
+percent, suggesting smoother or more coherent surface orientation. The
+indoor scene has lower normal consistency at 69.8 percent, which may
+reflect more complex room geometry or open surfaces.</p>
+<p><strong>Page 37</strong></p>
+<h2 data-number="5.9" id="synthetic-vs-real-discussion"><span
+class="header-section-number">5.9</span> 4.9 Synthetic vs Real
+Discussion</h2>
+<p>Synthetic scenes are useful because they provide clean controlled
+baselines. They avoid motion blur, rolling shutter artifacts, exposure
+changes, sensor noise, and real camera calibration errors. This makes
+them ideal for confirming that visualization, meshing, and metric
+dashboards function properly.</p>
+<p>Real smartphone data is more difficult. It contains blur,
+reflections, uneven lighting, inconsistent overlap, possible lens
+distortion, and scale ambiguity. The real dataset therefore gives a more
+realistic measure of practical performance, while synthetic data gives
+an upper-bound baseline.</p>
+<p>The comparison is important for supervisors because it shows that the
+project is not evaluated from only one dataset. Real data demonstrates
+practical use, while synthetic data demonstrates controlled pipeline
+behavior.</p>
+<pre class="mermaid"><code>quadrantChart
+    title Synthetic and Real Reconstruction Conditions
+    x-axis Low capture difficulty --&gt; High capture difficulty
+    y-axis Low control --&gt; High control
+    quadrant-1 Difficult but controlled
+    quadrant-2 Ideal benchmark
+    quadrant-3 Weak evidence
+    quadrant-4 Real-world prototype
+    Indoor Synthetic: [0.25, 0.85]
+    Terrain Synthetic: [0.30, 0.80]
+    Urban Synthetic: [0.35, 0.78]
+    Smartphone Kitchen: [0.78, 0.38]</code></pre>
+<p><strong>Figure 7: Synthetic Baseline Comparison</strong></p>
+<p><strong>Page 38</strong></p>
+<h2 data-number="5.10" id="export-readiness-results"><span
+class="header-section-number">5.10</span> 4.10 Export Readiness
+Results</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Export</th>
+<th>Available</th>
+<th>Discussion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PLY point cloud</td>
+<td>Yes</td>
+<td>Useful in Open3D, MeshLab, CloudCompare</td>
+</tr>
+<tr>
+<td>PLY mesh</td>
+<td>Yes</td>
+<td>Preserves mesh and vertex color information</td>
+</tr>
+<tr>
+<td>OBJ mesh</td>
+<td>Yes</td>
+<td>Useful in Blender, Unity, Unreal, and many 3D tools</td>
+</tr>
+<tr>
+<td>Gaussian scene</td>
+<td>Yes</td>
+<td>Provides images and COLMAP-style sparse files</td>
+</tr>
+<tr>
+<td>GLTF web 3D</td>
+<td>No</td>
+<td>Listed as expected but not mapped in
+<code>BACKEND_OUTPUTS</code></td>
+</tr>
+</tbody>
+</table>
+<p>The project is export-ready for four of five listed formats. The
+missing GLTF output is a clear future enhancement. Adding GLTF would
+improve browser and web application interoperability because GLTF is
+widely used for web-based 3D delivery.</p>
+<h2 data-number="5.11" id="dashboard-results"><span
+class="header-section-number">5.11</span> 4.11 Dashboard Results</h2>
+<p>The dashboard successfully organizes reconstruction into
+operator-facing pages. The Pipeline page tracks stage completion and
+timing. The 3D Viewer allows visual inspection. The Compare page
+provides reconstruction comparison modes. The Metrics page displays
+quality indicators and benchmark comparison. The Export page checks
+output readiness and provides download buttons.</p>
+<p>This design is appropriate for demonstration because it lets a
+supervisor see both process and output. Instead of only showing final
+files, the dashboard communicates how the final files were
+generated.</p>
+<p><strong>Page 39</strong></p>
+<h2 data-number="5.12" id="dependency-discussion"><span
+class="header-section-number">5.12</span> 4.12 Dependency
+Discussion</h2>
+<p>The declared <code>requirements.txt</code> is minimal. It includes
+Streamlit, streamlit-autorefresh, NumPy, and Open3D. The implemented
+code also imports OpenCV, PyTorch, Transformers, Plotly, and Pandas.
+Therefore, the current environment description should be updated before
+final submission.</p>
+<p>A recommended expanded <code>requirements.txt</code> would
+include:</p>
+<pre class="text"><code>streamlit==1.35.0
+streamlit-autorefresh==0.0.1
+numpy==1.24.0
+open3d==0.17.0
+opencv-python
+torch
+transformers
+pandas
+plotly
+pillow
+pillow-heif</code></pre>
+<p>The Gaussian Splatting repository has a separate environment and
+should not be merged casually into the main dashboard environment
+because it uses older Python and CUDA-specific packages. The report
+should present it as a separate optional resource.</p>
+<h2 data-number="5.13" id="strengths-of-the-project"><span
+class="header-section-number">5.13</span> 4.13 Strengths of the
+Project</h2>
+<p>The main strengths are:</p>
+<ol type="1">
+<li>End-to-end dashboard integration.</li>
+<li>Modular backend scripts.</li>
+<li>Clear intermediate outputs.</li>
+<li>Real and synthetic dataset support.</li>
+<li>Deep depth estimation integration.</li>
+<li>Point cloud, mesh, and Gaussian export support.</li>
+<li>Practical dashboard metrics and comparison views.</li>
+<li>Accessible smartphone-based input workflow.</li>
+</ol>
+<p><strong>Page 40</strong></p>
+<h2 data-number="5.14" id="limitations-of-the-project"><span
+class="header-section-number">5.14</span> 4.14 Limitations of the
+Project</h2>
+<p>The current limitations are:</p>
+<ol type="1">
+<li>Some evaluation values are mock and must be replaced with measured
+values.</li>
+<li>GLTF is listed but not implemented as an output mapping.</li>
+<li><code>requirements.txt</code> does not list all imported
+packages.</li>
+<li>Depth Anything V2 produces relative depth unless metric calibration
+is added.</li>
+<li>DBSCAN cleanup may remove valid disconnected scene components.</li>
+<li>Mesh texturing is limited; the system mainly exports geometry and
+vertex colors.</li>
+<li>The sparse reconstruction is simpler than mature tools such as
+COLMAP.</li>
+<li>The dashboard relies on subprocess execution and file outputs rather
+than a robust job queue.</li>
+<li>The app does not yet include automated benchmark comparison against
+ground truth.</li>
+<li>Real camera calibration mismatch can significantly reduce
+reconstruction quality.</li>
+</ol>
+<h2 data-number="5.15" id="risks-and-mitigation"><span
+class="header-section-number">5.15</span> 4.15 Risks and Mitigation</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Effect</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blurry images</td>
+<td>Poor feature matching</td>
+<td>Frame sharpness filtering</td>
+</tr>
+<tr>
+<td>Low overlap</td>
+<td>Pose recovery failure</td>
+<td>Capture guidance and overlap metrics</td>
+</tr>
+<tr>
+<td>Textureless surfaces</td>
+<td>Sparse cloud gaps</td>
+<td>Depth model fusion</td>
+</tr>
+<tr>
+<td>Calibration mismatch</td>
+<td>Scale and alignment errors</td>
+<td>Zoom-specific calibration files</td>
+</tr>
+<tr>
+<td>Depth model error</td>
+<td>Distorted dense cloud</td>
+<td>Visual inspection and benchmark validation</td>
+</tr>
+<tr>
+<td>Excessive outliers</td>
+<td>Noisy mesh</td>
+<td>DBSCAN cleanup and density trimming</td>
+</tr>
+<tr>
+<td>Missing dependencies</td>
+<td>Runtime failure</td>
+<td>Expand requirements and setup docs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Page 41</strong></p>
+<h2 data-number="5.16" id="acceptance-criteria-results"><span
+class="header-section-number">5.16</span> 4.16 Acceptance Criteria
+Results</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th style="text-align: right;">Target</th>
+<th style="text-align: right;">Mock Result</th>
+<th>Pass/Fail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum input images</td>
+<td style="text-align: right;">8 images</td>
+<td style="text-align: right;">35 images</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Minimum selected keyframes</td>
+<td style="text-align: right;">8 frames</td>
+<td style="text-align: right;">25 frames</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Sparse cloud generated</td>
+<td style="text-align: right;">File exists</td>
+<td style="text-align: right;">Available</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Dense cloud generated</td>
+<td style="text-align: right;">File exists</td>
+<td style="text-align: right;">Available</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Cleaned cloud generated</td>
+<td style="text-align: right;">File exists</td>
+<td style="text-align: right;">Available</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Mesh generated</td>
+<td style="text-align: right;">File exists</td>
+<td style="text-align: right;">Available</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Reconstruction score</td>
+<td style="text-align: right;">&gt;= 80 percent</td>
+<td style="text-align: right;">90 percent</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>RMS error</td>
+<td style="text-align: right;">&lt;= 1.00 px</td>
+<td style="text-align: right;">0.74 px</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Noise reduction</td>
+<td style="text-align: right;">&gt;= 20 percent</td>
+<td style="text-align: right;">31 percent</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Export package readiness</td>
+<td style="text-align: right;">&gt;= 3 formats</td>
+<td style="text-align: right;">4 formats</td>
+<td>Pass</td>
+</tr>
+</tbody>
+</table>
+<p>The mock acceptance table shows that the project meets the
+demonstration targets. Final acceptance should be based on measured
+values from a controlled test run.</p>
+<h2 data-number="5.17" id="discussion-of-supervisor-requirements"><span
+class="header-section-number">5.17</span> 4.17 Discussion of Supervisor
+Requirements</h2>
+<p>The project report satisfies the supervisor’s report structure by
+providing front matter, abbreviations, figures, contents, introduction,
+background, aims, objectives, scope, architecture, literature review,
+methodology, results, discussion, conclusion, and future enhancements.
+The report also includes dependencies, resources, diagrams, and
+research-based justification.</p>
+<p>Chapters 3 and 4 provide the largest discussion because they explain
+the implementation workflow and the resulting outputs. This matches the
+instruction that methodology and results/discussion should cover the
+main body of the report.</p>
+<p><strong>Page 42</strong></p>
+<h2 data-number="5.18" id="overall-discussion"><span
+class="header-section-number">5.18</span> 4.18 Overall Discussion</h2>
+<p>S.P.E.C.T.R.A demonstrates that a smartphone-based reconstruction
+pipeline can be made understandable through a dashboard interface. The
+project is not only about producing a mesh; it is about showing each
+stage that leads to the mesh. This is valuable in an academic setting
+because it allows supervisors and examiners to trace the result back to
+the capture data, depth maps, camera poses, dense fusion, cleanup, and
+meshing.</p>
+<p>The strongest technical result is the existence of multiple output
+representations. Sparse clouds, dense clouds, cleaned clouds, meshes,
+and Gaussian export files each serve different purposes. Sparse clouds
+demonstrate feature geometry. Dense clouds provide richer visual
+structure. Cleaned clouds improve usability. Meshes support 3D editing
+and rendering. Gaussian export prepares the data for neural rendering
+workflows.</p>
+<p>The main technical caution is that the system mixes learned depth
+with geometric pose recovery. This is powerful, but it requires careful
+validation. Monocular depth is not a substitute for true metric
+measurement unless calibrated. The final model should therefore be
+interpreted as a reconstruction prototype rather than a survey-grade
+measurement product.</p>
+<p><strong>Page 43</strong></p>
+<h1 data-number="6"
+id="chapter-5-conclusion-and-future-enhancement"><span
+class="header-section-number">6</span> Chapter 5: Conclusion and Future
+Enhancement</h1>
+<h2 data-number="6.1" id="conclusion"><span
+class="header-section-number">6.1</span> 5.1 Conclusion</h2>
+<p>The S.P.E.C.T.R.A project successfully integrates a 3D reconstruction
+workflow into a Streamlit dashboard. It supports image ingestion, smart
+frame selection, keyframe preparation, deep monocular depth estimation,
+sparse camera pose recovery, dense point cloud fusion, cleanup, meshing,
+evaluation, comparison, and export.</p>
+<p>The project demonstrates a complete pipeline using real smartphone
+imagery and synthetic baseline data. The mock evaluation reports 35
+input images, 25 selected keyframes, nine completed stages, 236.76
+seconds total processing time, a 90 percent reconstruction score, 0.74
+pixel RMS reprojection error, and four available export formats.</p>
+<p>The system is suitable for demonstration, learning, prototype
+development, and supervisor review. It is especially strong as an
+explainable reconstruction dashboard because it exposes the intermediate
+steps that are often hidden inside professional software.</p>
+<p><strong>Page 44</strong></p>
+<h2 data-number="6.2" id="contributions-of-the-project"><span
+class="header-section-number">6.2</span> 5.2 Contributions of the
+Project</h2>
+<p>The main contributions are:</p>
+<ol type="1">
+<li>A Streamlit dashboard for operating a multi-stage 3D reconstruction
+workflow.</li>
+<li>A frame selection method that filters smartphone images for
+reconstruction usefulness.</li>
+<li>Integration of Depth Anything V2 for dense depth cues.</li>
+<li>A simplified SfM pipeline using ORB, matching, RANSAC, essential
+matrix estimation, and pose recovery.</li>
+<li>Pose-aligned depth fusion into dense point clouds.</li>
+<li>Noise cleanup with DBSCAN clustering.</li>
+<li>Poisson mesh reconstruction and OBJ/PLY export.</li>
+<li>Gaussian Splatting dataset export.</li>
+<li>Synthetic baseline support for indoor, terrain, and urban
+scenes.</li>
+<li>A structured evaluation and reporting framework.</li>
+</ol>
+<h2 data-number="6.3" id="future-enhancements"><span
+class="header-section-number">6.3</span> 5.3 Future Enhancements</h2>
+<p>Recommended future enhancements are:</p>
+<ol type="1">
+<li>Replace all mock metrics with measured values from automated
+evaluation scripts.</li>
+<li>Add GLTF export and map it correctly in
+<code>BACKEND_OUTPUTS</code>.</li>
+<li>Expand <code>requirements.txt</code> to include all imported
+dependencies.</li>
+<li>Add a dashboard calibration page for checkerboard capture, RMS
+reporting, and zoom selection.</li>
+<li>Improve cleanup by allowing users to preserve multiple DBSCAN
+clusters.</li>
+<li>Add mesh texturing using the original images.</li>
+<li>Add COLMAP integration as an optional advanced SfM backend.</li>
+<li>Add a proper job queue so long-running stages do not block the
+UI.</li>
+<li>Add benchmark support using ground-truth datasets.</li>
+<li>Add automatic PDF or DOCX report export from dashboard metrics.</li>
+</ol>
+<p><strong>Page 45</strong></p>
+<h2 data-number="6.4" id="proposed-technical-improvements"><span
+class="header-section-number">6.4</span> 5.4 Proposed Technical
+Improvements</h2>
+<h3 data-number="6.4.1" id="evaluation-improvements"><span
+class="header-section-number">6.4.1</span> 5.4.1 Evaluation
+Improvements</h3>
+<p>The evaluation script should generate a JSON report containing:</p>
+<ol type="1">
+<li>Stage times.</li>
+<li>Point counts.</li>
+<li>Mesh counts.</li>
+<li>Pose recovery count.</li>
+<li>Reprojection error.</li>
+<li>Cleanup reduction.</li>
+<li>Export readiness.</li>
+<li>Warnings and missing files.</li>
+</ol>
+<p>This JSON could populate the Metrics page directly and replace mock
+dashboard values.</p>
+<h3 data-number="6.4.2" id="dependency-improvements"><span
+class="header-section-number">6.4.2</span> 5.4.2 Dependency
+Improvements</h3>
+<p>The setup process should be updated to avoid missing package errors.
+A recommended approach is to maintain:</p>
+<pre class="text"><code>requirements.txt              dashboard and reconstruction core
+requirements-dev.txt          testing and formatting tools
+gaussian-splatting/environment.yml  neural rendering environment</code></pre>
+<h3 data-number="6.4.3" id="user-experience-improvements"><span
+class="header-section-number">6.4.3</span> 5.4.3 User Experience
+Improvements</h3>
+<p>The dashboard should include capture guidance, such as:</p>
+<ol type="1">
+<li>Move slowly around the object or scene.</li>
+<li>Maintain 70 to 80 percent overlap.</li>
+<li>Avoid motion blur.</li>
+<li>Avoid reflective and transparent surfaces.</li>
+<li>Capture from multiple heights.</li>
+<li>Keep exposure stable.</li>
+<li>Use calibration matching the selected camera zoom.</li>
+</ol>
+<p><strong>Page 46</strong></p>
+<h2 data-number="6.5" id="final-recommendation"><span
+class="header-section-number">6.5</span> 5.5 Final Recommendation</h2>
+<p>S.P.E.C.T.R.A should be submitted as a working reconstruction
+prototype with clear explanation of mock versus measured values. The
+report should be accompanied by the dashboard, real output files,
+synthetic baselines, and a short demonstration run. The strongest
+academic framing is that S.P.E.C.T.R.A makes 3D reconstruction
+explainable and accessible through a dashboard while preserving enough
+technical depth to show understanding of photogrammetry, monocular depth
+estimation, point cloud processing, mesh reconstruction, and export
+workflows.</p>
+<p>The next major step is to convert the mock evaluation into a measured
+evaluation by running the full pipeline, recording stage times from
+<code>st.session_state["stage_times"]</code>, computing real output
+counts from Open3D, and saving a final evaluation JSON.</p>
+<p><strong>Page 47</strong></p>
+<h1 data-number="7" id="references"><span
+class="header-section-number">7</span> References</h1>
+<p>[1] Smith, M. W., Carrivick, J. L., and Quincey, D. J. (2016).
+<em>Structure from motion photogrammetry in physical geography</em>.
+Progress in Physical Geography, 40(2). DOI:
+https://doi.org/10.1177/0309133315615805</p>
+<p>[2] Yang, L., Kang, B., Huang, Z., Zhao, Z., Xu, X., Feng, J., and
+Zhao, H. (2024). <em>Depth Anything V2</em>. Accepted by NeurIPS 2024.
+arXiv: https://arxiv.org/abs/2406.09414</p>
+<p>[3] Dandois, J. P. and Ellis, E. C. (2017). <em>Structure from Motion
+(SfM) Photogrammetry with Drone Data: A Low Cost Method for Monitoring
+Greenhouse Gas Emissions from Forests in Developing Countries</em>.
+Forests, 8(3), 68. https://www.mdpi.com/1999-4907/8/3/68</p>
+<p>[4] Kagaba, A. G. (2024). <em>Digital Humanities: Using Technology to
+Analyze Cultural Artifacts</em>. IDOSR Journal of Humanities and Social
+Sciences, 9(3), 1-8. DOI:
+https://doi.org/10.59298/IDOSRJHSS/2024/93180000</p>
+<p>[5] CyArk. <em>Royal Tombs at Kasubi</em>. Project resource and
+digital preservation context.
+https://cyark.org/projects/royal-tombs-at-kasubi</p>
+<p>[6] CyArk. <em>Royal Tombs at Kasubi: In-Depth</em>. Digital
+preservation context for Uganda.
+https://www.cyark.org/projects/royal-tombs-at-kasubi/in-depth</p>
+<p>[7] Remondino, F. and Rizzi, A. (2010). <em>Reality-based 3D
+documentation of natural and cultural heritage sites: techniques,
+problems, and examples</em>. Applied Geomatics, 2, 85-100.
+https://link.springer.com/article/10.1007/s12518-010-0025-x</p>
+<p>[8] Schonberger, J. L. and Frahm, J. M. (2016).
+<em>Structure-from-Motion Revisited</em>. Proceedings of the IEEE
+Conference on Computer Vision and Pattern Recognition.
+https://openaccess.thecvf.com/content_cvpr_2016/html/Schonberger_Structure-From-Motion_Revisited_CVPR_2016_paper.html</p>
+<p>[9] Rublee, E., Rabaud, V., Konolige, K., and Bradski, G. (2011).
+<em>ORB: An efficient alternative to SIFT or SURF</em>. IEEE
+International Conference on Computer Vision. DOI:
+https://doi.org/10.1109/ICCV.2011.6126544</p>
+<p>[10] Ranftl, R., Bochkovskiy, A., and Koltun, V. (2021). <em>Vision
+Transformers for Dense Prediction</em>. IEEE/CVF International
+Conference on Computer Vision. MiDaS resource:
+https://arxiv.org/abs/2103.13413</p>
+<p>[11] Ester, M., Kriegel, H. P., Sander, J., and Xu, X. (1996). <em>A
+density-based algorithm for discovering clusters in large spatial
+databases with noise</em>. Proceedings of the Second International
+Conference on Knowledge Discovery and Data Mining.
+https://www.aaai.org/Papers/KDD/1996/KDD96-037.pdf</p>
+<p>[12] Kazhdan, M., Bolitho, M., and Hoppe, H. (2006). <em>Poisson
+Surface Reconstruction</em>. Symposium on Geometry Processing.
+https://diglib.eg.org/handle/10.2312/SGP.SGP06.061-070</p>
+<p>[13] Zhou, Q. Y., Park, J., and Koltun, V. (2018). <em>Open3D: A
+Modern Library for 3D Data Processing</em>. arXiv.
+https://arxiv.org/abs/1801.09847</p>
+<p>[14] Kerbl, B., Kopanas, G., Leimkuhler, T., and Drettakis, G.
+(2023). <em>3D Gaussian Splatting for Real-Time Radiance Field
+Rendering</em>. ACM Transactions on Graphics.
+https://arxiv.org/abs/2308.04079</p>
+<p>[15] MIT Vision Book. <em>Multiview Geometry and Structure from
+Motion</em>. https://visionbook.mit.edu/multiview.html</p>
+<p>[16] Stanford University. <em>CS231A: Computer Vision, From 3D
+Reconstruction to Recognition - Course Notes</em>.
+https://web.stanford.edu/class/cs231a/course_notes.html</p>
+<p>[17] Stanford Computer Graphics Laboratory. <em>The Stanford 3D
+Scanning Repository</em>.
+https://graphics.stanford.edu/data/3Dscanrep/</p>
+<p>[18] OpenCV Documentation. <em>ORB feature detection and camera
+calibration tutorials</em>. https://docs.opencv.org/</p>
+<p>[19] Open3D Documentation. <em>Point cloud and mesh processing
+tutorials</em>. https://www.open3d.org/docs/</p>
+<p>[20] Plotly Documentation. <em>3D scatter plots and 3D camera
+controls in Python</em>. https://plotly.com/python/3d-scatter-plots/</p>
+<p>[21] Streamlit Documentation. <em>Get started and API reference</em>.
+https://docs.streamlit.io/get-started</p>
+<p>[22] GraphDECO-INRIA. <em>3D Gaussian Splatting official
+repository</em>.
+https://github.com/graphdeco-inria/gaussian-splatting</p>
+<p>[23] Poux, F. and 3D Geodata Academy. <em>Point cloud processing and
+3D reconstruction learning resources</em>. https://learngeodata.eu/</p>
+<p>[24] CyArk. <em>Royal Tombs at Kasubi: 3D Explorer</em>.
+https://www.cyark.org/projects/royal-tombs-at-kasubi/3D-Explorer</p>
+<p><strong>Page 48</strong></p>
+<h1 data-number="8" id="appendices"><span
+class="header-section-number">8</span> Appendices</h1>
+<h2 data-number="8.1" id="appendix-a-mock-evaluation-record"><span
+class="header-section-number">8.1</span> Appendix A: Mock Evaluation
+Record</h2>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;evaluation_id&quot;</span><span class="fu">:</span> <span class="st">&quot;SPECTRA-EVAL-2026-05-25-001&quot;</span><span class="fu">,</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;program&quot;</span><span class="fu">:</span> <span class="st">&quot;S.P.E.C.T.R.A&quot;</span><span class="fu">,</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;dataset&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;EVAL-REAL-001&quot;</span><span class="fu">,</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;Real Dataset&quot;</span><span class="fu">,</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;scene&quot;</span><span class="fu">:</span> <span class="st">&quot;Indoor kitchen&quot;</span><span class="fu">,</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;input_frames&quot;</span><span class="fu">:</span> <span class="dv">35</span><span class="fu">,</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;selected_keyframes&quot;</span><span class="fu">:</span> <span class="dv">25</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;pipeline&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;stages_total&quot;</span><span class="fu">:</span> <span class="dv">9</span><span class="fu">,</span></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;stages_complete&quot;</span><span class="fu">:</span> <span class="dv">9</span><span class="fu">,</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;total_time_s&quot;</span><span class="fu">:</span> <span class="fl">236.76</span><span class="fu">,</span></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;status&quot;</span><span class="fu">:</span> <span class="st">&quot;Complete&quot;</span></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;outputs&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;sparse_cloud_points&quot;</span><span class="fu">:</span> <span class="dv">1224</span><span class="fu">,</span></span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;dense_fused_points&quot;</span><span class="fu">:</span> <span class="dv">20987</span><span class="fu">,</span></span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;clean_cloud_points&quot;</span><span class="fu">:</span> <span class="dv">14683</span><span class="fu">,</span></span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;pose_aligned_points&quot;</span><span class="fu">:</span> <span class="dv">88259</span><span class="fu">,</span></span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;mesh_vertices&quot;</span><span class="fu">:</span> <span class="dv">35196</span><span class="fu">,</span></span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;mesh_faces&quot;</span><span class="fu">:</span> <span class="dv">70077</span></span>
+<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;quality&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;reconstruction_score_pct&quot;</span><span class="fu">:</span> <span class="dv">90</span><span class="fu">,</span></span>
+<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;rms_error_px&quot;</span><span class="fu">:</span> <span class="fl">0.74</span><span class="fu">,</span></span>
+<span id="cb45-28"><a href="#cb45-28" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;noise_reduction_pct&quot;</span><span class="fu">:</span> <span class="dv">31</span><span class="fu">,</span></span>
+<span id="cb45-29"><a href="#cb45-29" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;coverage_pct&quot;</span><span class="fu">:</span> <span class="dv">92</span><span class="fu">,</span></span>
+<span id="cb45-30"><a href="#cb45-30" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;overlap_pct&quot;</span><span class="fu">:</span> <span class="dv">86</span><span class="fu">,</span></span>
+<span id="cb45-31"><a href="#cb45-31" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;density_pct&quot;</span><span class="fu">:</span> <span class="dv">88</span></span>
+<span id="cb45-32"><a href="#cb45-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb45-33"><a href="#cb45-33" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;exports&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb45-34"><a href="#cb45-34" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;ply_point_cloud&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb45-35"><a href="#cb45-35" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;obj_mesh&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb45-36"><a href="#cb45-36" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;ply_mesh&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb45-37"><a href="#cb45-37" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;gltf_web_3d&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb45-38"><a href="#cb45-38" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;gaussian_scene&quot;</span><span class="fu">:</span> <span class="kw">true</span></span>
+<span id="cb45-39"><a href="#cb45-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb45-40"><a href="#cb45-40" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p><strong>Page 49</strong></p>
+<h2 data-number="8.2" id="appendix-b-backend-commands"><span
+class="header-section-number">8.2</span> Appendix B: Backend
+Commands</h2>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/utils/smart_frame_selector.py <span class="at">--mode</span> images</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/capture/prepare_keyframes_from_folder.py</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/depth/midas_depth.py</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/sfm/sparse_recon_live.py <span class="at">--no_view</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/fusion/depth_fusion.py <span class="at">--no_view</span> <span class="at">--remove_plane</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/utils/cleanup.py</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/mesh/mesh_surface.py</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/utils/evaluate_reconstruction.py</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/export/gaussian_export.py</span></code></pre></div>
+<h2 data-number="8.3" id="appendix-c-main-output-files"><span
+class="header-section-number">8.3</span> Appendix C: Main Output
+Files</h2>
+<pre class="text"><code>data/results/sparse_cloud.ply
+data/results/camera_poses.json
+data/results/dense_fused_cloud.ply
+data/results/dense_fused_cloud_pose_aligned.ply
+data/results/dense_fused_cloud_clean.ply
+data/results/mesh_poisson.ply
+data/results/mesh_poisson.obj
+data/gaussian_splatting_scene/</code></pre>
+<p><strong>Page 50</strong></p>
+<h2 data-number="8.4"
+id="appendix-d-recommended-full-requirements"><span
+class="header-section-number">8.4</span> Appendix D: Recommended Full
+Requirements</h2>
+<pre class="text"><code>streamlit==1.35.0
+streamlit-autorefresh==0.0.1
+numpy==1.24.0
+open3d==0.17.0
+opencv-python
+torch
+transformers
+pandas
+plotly
+pillow
+pillow-heif</code></pre>
+<h2 data-number="8.5"
+id="appendix-e-gaussian-splatting-environment-summary"><span
+class="header-section-number">8.5</span> Appendix E: Gaussian Splatting
+Environment Summary</h2>
+<p>The Gaussian Splatting environment is separate from the dashboard
+environment. It includes:</p>
+<pre class="text"><code>python=3.7.13
+cudatoolkit=11.6
+pytorch=1.12.1
+torchvision=0.13.1
+torchaudio=0.12.1
+plyfile
+tqdm
+opencv-python
+joblib
+diff-gaussian-rasterization
+simple-knn
+fused-ssim</code></pre>
+<p><strong>Page 51</strong></p>
+<h2 data-number="8.6"
+id="appendix-f-capture-guidelines-for-better-reconstruction"><span
+class="header-section-number">8.6</span> Appendix F: Capture Guidelines
+for Better Reconstruction</h2>
+<ol type="1">
+<li>Capture at least 25 to 40 images for a small indoor object or
+scene.</li>
+<li>Maintain high overlap between consecutive images.</li>
+<li>Move the camera slowly to reduce blur.</li>
+<li>Capture from multiple angles and heights.</li>
+<li>Avoid transparent, glossy, or reflective surfaces where
+possible.</li>
+<li>Avoid very dark images and strong backlighting.</li>
+<li>Keep the object or scene static during capture.</li>
+<li>Use the same zoom level as the calibration file.</li>
+<li>Avoid extreme close-ups unless calibrated for that distance.</li>
+<li>Inspect selected frames before running depth and SfM.</li>
+</ol>
+<p><strong>Page 52</strong></p>
+<h2 data-number="8.7"
+id="appendix-g-detailed-architecture-diagram"><span
+class="header-section-number">8.7</span> Appendix G: Detailed
+Architecture Diagram</h2>
+<pre class="mermaid"><code>flowchart TB
+    subgraph UI[Streamlit Dashboard]
+        G[Guide]
+        U[Upload]
+        P[Pipeline]
+        V[3D Viewer]
+        C[Compare]
+        M[Metrics]
+        X[Export]
+    end
+
+    subgraph Backend[Python Backend Scripts]
+        S1[smart_frame_selector.py]
+        S2[prepare_keyframes_from_folder.py]
+        S3[midas_depth.py]
+        S4[sparse_recon_live.py]
+        S5[depth_fusion.py]
+        S6[cleanup.py]
+        S7[mesh_surface.py]
+        S8[evaluate_reconstruction.py]
+        S9[gaussian_export.py]
+    end
+
+    subgraph Data[File-Based Data Layer]
+        D1[data/raw_phone]
+        D2[data/selected]
+        D3[data/keyframes]
+        D4[data/results/depth]
+        D5[data/results]
+        D6[data/gaussian_splatting_scene]
+    end
+
+    P --&gt; Backend
+    Backend --&gt; Data
+    Data --&gt; V
+    Data --&gt; C
+    Data --&gt; M
+    Data --&gt; X</code></pre>
+<p><strong>Figure 8: Dashboard, Backend, and Data Layer</strong></p>
+<p><strong>Page 53</strong></p>
+<h2 data-number="8.8" id="appendix-h-evaluation-dashboard-model"><span
+class="header-section-number">8.8</span> Appendix H: Evaluation
+Dashboard Model</h2>
+<pre class="mermaid"><code>flowchart LR
+    A[Stage completion] --&gt; E[Metrics page]
+    B[Point counts] --&gt; E
+    C[Mesh counts] --&gt; E
+    D[Export files] --&gt; E
+    E --&gt; F[Acceptance criteria]
+    F --&gt; G[Pass or fail summary]
+    E --&gt; H[Supervisor report values]</code></pre>
+<p><strong>Figure 9: Evaluation and Export Readiness Model</strong></p>
+<p>The Metrics page should ultimately be powered by measured data. In
+the current report, values are drawn from
+<code>MOCK_EVALUATION_DATA.md</code> and synthetic result JSON
+files.</p>
+<p><strong>Page 54</strong></p>
+<h2 data-number="8.9"
+id="appendix-i-synthetic-baseline-json-source"><span
+class="header-section-number">8.9</span> Appendix I: Synthetic Baseline
+JSON Source</h2>
+<p>The synthetic baseline metrics are stored in:</p>
+<pre class="text"><code>data/results/synthetic/synthetic_report.json</code></pre>
+<p>This file identifies the project as:</p>
+<pre class="text"><code>Recon3D - Synthetic Validation</code></pre>
+<p>It contains scene-level metrics for:</p>
+<ol type="1">
+<li>Indoor.</li>
+<li>Terrain.</li>
+<li>Urban.</li>
+</ol>
+<p>These scenes support controlled comparison and help demonstrate that
+the dashboard can visualize and report different 3D reconstruction
+contexts.</p>
+<p><strong>Page 55</strong></p>
+<h2 data-number="8.10" id="appendix-j-file-mapping-table"><span
+class="header-section-number">8.10</span> Appendix J: File Mapping
+Table</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Project Area</th>
+<th>Main File</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dashboard</td>
+<td><code>spectra_dashboard/main.py</code></td>
+<td>Main Streamlit application</td>
+</tr>
+<tr>
+<td>Frame selection</td>
+<td><code>src/utils/smart_frame_selector.py</code></td>
+<td>Select diverse useful frames</td>
+</tr>
+<tr>
+<td>Keyframe preparation</td>
+<td><code>src/capture/prepare_keyframes_from_folder.py</code></td>
+<td>Resize and filter frames</td>
+</tr>
+<tr>
+<td>Depth</td>
+<td><code>src/depth/midas_depth.py</code></td>
+<td>Depth Anything V2 inference</td>
+</tr>
+<tr>
+<td>Depth utilities</td>
+<td><code>src/depth/depth_utils.py</code></td>
+<td>Calibration and depth conversion</td>
+</tr>
+<tr>
+<td>Sparse SfM</td>
+<td><code>src/sfm/sparse_recon_live.py</code></td>
+<td>Pose recovery and sparse cloud</td>
+</tr>
+<tr>
+<td>Fusion</td>
+<td><code>src/fusion/depth_fusion.py</code></td>
+<td>Dense point cloud fusion</td>
+</tr>
+<tr>
+<td>Cleanup</td>
+<td><code>src/utils/cleanup.py</code></td>
+<td>DBSCAN noise removal</td>
+</tr>
+<tr>
+<td>Meshing</td>
+<td><code>src/mesh/mesh_surface.py</code></td>
+<td>Poisson mesh generation</td>
+</tr>
+<tr>
+<td>Evaluation</td>
+<td><code>src/utils/evaluate_reconstruction.py</code></td>
+<td>Point count comparison</td>
+</tr>
+<tr>
+<td>Export</td>
+<td><code>src/export/gaussian_export.py</code></td>
+<td>Gaussian Splatting dataset export</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Page 56</strong></p>
+<h2 data-number="8.11"
+id="appendix-k-sample-final-evaluation-checklist"><span
+class="header-section-number">8.11</span> Appendix K: Sample Final
+Evaluation Checklist</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Check</th>
+<th>Evidence Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw dataset available</td>
+<td>Image count in <code>data/raw_phone</code></td>
+</tr>
+<tr>
+<td>Selected frames available</td>
+<td>Image count in <code>data/selected</code></td>
+</tr>
+<tr>
+<td>Keyframes available</td>
+<td>Image count in <code>data/keyframes</code></td>
+</tr>
+<tr>
+<td>Depth maps available</td>
+<td><code>.npy</code> and <code>.png</code> count in
+<code>data/results/depth</code></td>
+</tr>
+<tr>
+<td>Camera poses available</td>
+<td><code>camera_poses.json</code> exists and has pose entries</td>
+</tr>
+<tr>
+<td>Sparse cloud valid</td>
+<td><code>sparse_cloud.ply</code> exists and point count &gt; 0</td>
+</tr>
+<tr>
+<td>Dense cloud valid</td>
+<td>Dense cloud exists and point count &gt; sparse count</td>
+</tr>
+<tr>
+<td>Cleaned cloud valid</td>
+<td>Cleaned cloud exists and outlier reduction recorded</td>
+</tr>
+<tr>
+<td>Mesh valid</td>
+<td>Mesh PLY and OBJ exist</td>
+</tr>
+<tr>
+<td>Gaussian export valid</td>
+<td>Images and sparse text files exist</td>
+</tr>
+<tr>
+<td>Report values measured</td>
+<td>Evaluation JSON generated from actual run</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Page 57</strong></p>
+<h2 data-number="8.12"
+id="appendix-l-proposed-evaluation-json-schema"><span
+class="header-section-number">8.12</span> Appendix L: Proposed
+Evaluation JSON Schema</h2>
+<div class="sourceCode" id="cb54"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;run_id&quot;</span><span class="fu">:</span> <span class="st">&quot;string&quot;</span><span class="fu">,</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;date&quot;</span><span class="fu">:</span> <span class="st">&quot;YYYY-MM-DD&quot;</span><span class="fu">,</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;dataset&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;string&quot;</span><span class="fu">,</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;input_images&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;selected_frames&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;keyframes&quot;</span><span class="fu">:</span> <span class="dv">0</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;timings_s&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;keyframes&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;prepare&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;depth&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;sfm&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;fusion&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;cleanup&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;mesh&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;evaluation&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;gaussian&quot;</span><span class="fu">:</span> <span class="dv">0</span></span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;outputs&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;sparse_points&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;dense_points&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;clean_points&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;mesh_vertices&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;mesh_faces&quot;</span><span class="fu">:</span> <span class="dv">0</span></span>
+<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;quality&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb54-29"><a href="#cb54-29" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;rms_reprojection_error_px&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-30"><a href="#cb54-30" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;coverage_pct&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-31"><a href="#cb54-31" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;overlap_pct&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb54-32"><a href="#cb54-32" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;density_pct&quot;</span><span class="fu">:</span> <span class="dv">0</span></span>
+<span id="cb54-33"><a href="#cb54-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb54-34"><a href="#cb54-34" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p><strong>Page 58</strong></p>
+<h2 data-number="8.13" id="appendix-m-report-conversion-notes"><span
+class="header-section-number">8.13</span> Appendix M: Report Conversion
+Notes</h2>
+<p>This report is written in Markdown. To convert it into a Word or PDF
+report, use a Markdown renderer that supports page breaks and Mermaid
+diagrams, or export through a toolchain such as:</p>
+<div class="sourceCode" id="cb55"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> SPECTRA_PROJECT_REPORT.md <span class="at">-o</span> SPECTRA_PROJECT_REPORT.docx</span></code></pre></div>
+<p>If Mermaid diagrams are not rendered automatically, export each
+Mermaid diagram to an image and replace the code blocks with image
+references. The report already contains figure captions so the rendered
+document can maintain a formal academic layout.</p>
+<p><strong>Page 59</strong></p>
+<h2 data-number="8.14" id="appendix-n-final-notes-for-submission"><span
+class="header-section-number">8.14</span> Appendix N: Final Notes for
+Submission</h2>
+<p>Before final submission:</p>
+<ol type="1">
+<li>Run the full dashboard pipeline on the final dataset.</li>
+<li>Replace mock timing values with actual stage timings.</li>
+<li>Replace mock quality values with measured metrics.</li>
+<li>Confirm all output files open in external tools.</li>
+<li>Add screenshots of the dashboard pages if required by the
+supervisor.</li>
+<li>Add student registration details and final signature fields if
+required by the university template.</li>
+<li>Convert the Markdown report to DOCX or PDF.</li>
+<li>Verify page numbering in the final editor, especially the roman
+numerals for the first four pages.</li>
+</ol>
+<p><strong>Page 60</strong></p>
+</body>
+</html>

@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build outputs
+*.egg-info/
+dist/
+build/
+.streamlit/secrets.toml
+
+# Environment variables
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Uploads and temporary files
+data/uploads/
+*.tmp
+
+# Streamlit Cloud deployment: keep the repository light.
+# The app creates these folders when it starts, so generated inputs,
+# reconstruction outputs, logs, and large local datasets should stay local.
+data/*
+!data/.gitkeep
+
+# Local screenshots and capture metadata
+ScreenCapture_*.png
+ScreenCamera_*.json
+
+# Generated documents and bulky local tooling
+*.docx
+tools/
+gaussian-splatting/
+
+# Empty duplicate placeholder file
+README
