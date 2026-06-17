@@ -1197,31 +1197,80 @@ SYNTHETIC_SCENES = ["Indoor Room", "ALS Terrain"]
 def synthetic_scene(scene: str) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray | list[str]]:
     rng = np.random.default_rng({"Indoor Room": 1, "ALS Terrain": 2}[scene])
     if scene == "Indoor Room":
-        n = 7000
-        floor_x = rng.uniform(-5, 5, n)
-        floor_y = rng.uniform(-4, 4, n)
-        floor_z = rng.normal(0, 0.02, n)
-        wall_n = 2500
-        wall_x = np.concatenate([rng.uniform(-5, 5, wall_n), rng.choice([-5, 5], wall_n)])
-        wall_y = np.concatenate([rng.choice([-4, 4], wall_n), rng.uniform(-4, 4, wall_n)])
-        wall_z = rng.uniform(0, 3, wall_n * 2)
-        x = np.concatenate([floor_x, wall_x])
-        y = np.concatenate([floor_y, wall_y])
-        z = np.concatenate([floor_z, wall_z])
+        parts: list[tuple[np.ndarray, np.ndarray, np.ndarray, str]] = []
+
+        def add_box(
+            center: tuple[float, float, float],
+            size: tuple[float, float, float],
+            count: int,
+            color: str,
+        ) -> None:
+            cx, cy, cz = center
+            sx, sy, sz = size
+            faces = rng.integers(0, 6, count)
+            u = rng.uniform(-0.5, 0.5, count)
+            v = rng.uniform(-0.5, 0.5, count)
+            x = np.empty(count)
+            y = np.empty(count)
+            z = np.empty(count)
+            for face in range(6):
+                mask = faces == face
+                if face == 0:
+                    x[mask], y[mask], z[mask] = cx - sx / 2, cy + u[mask] * sy, cz + v[mask] * sz
+                elif face == 1:
+                    x[mask], y[mask], z[mask] = cx + sx / 2, cy + u[mask] * sy, cz + v[mask] * sz
+                elif face == 2:
+                    x[mask], y[mask], z[mask] = cx + u[mask] * sx, cy - sy / 2, cz + v[mask] * sz
+                elif face == 3:
+                    x[mask], y[mask], z[mask] = cx + u[mask] * sx, cy + sy / 2, cz + v[mask] * sz
+                elif face == 4:
+                    x[mask], y[mask], z[mask] = cx + u[mask] * sx, cy + v[mask] * sy, cz - sz / 2
+                else:
+                    x[mask], y[mask], z[mask] = cx + u[mask] * sx, cy + v[mask] * sy, cz + sz / 2
+            jitter = rng.normal(0, 0.01, (3, count))
+            parts.append((x + jitter[0], y + jitter[1], z + jitter[2], color))
+
+        floor_n = 4500
+        parts.append((
+            rng.uniform(-5, 5, floor_n),
+            rng.uniform(-4, 4, floor_n),
+            rng.normal(0, 0.01, floor_n),
+            "rgb(188,169,132)",
+        ))
+        wall_n = 1800
+        parts.append((rng.uniform(-5, 5, wall_n), np.full(wall_n, 4.0), rng.uniform(0, 3, wall_n), "rgb(222,229,236)"))
+        parts.append((np.full(wall_n, -5.0), rng.uniform(-4, 4, wall_n), rng.uniform(0, 3, wall_n), "rgb(211,221,231)"))
+        parts.append((np.full(wall_n, 5.0), rng.uniform(-4, 4, wall_n), rng.uniform(0, 3, wall_n), "rgb(211,221,231)"))
+
+        add_box((0.0, 0.2, 0.75), (2.2, 1.25, 0.18), 1100, "rgb(126,88,56)")
+        add_box((-0.8, -0.2, 0.35), (0.16, 0.16, 0.7), 250, "rgb(95,65,43)")
+        add_box((0.8, -0.2, 0.35), (0.16, 0.16, 0.7), 250, "rgb(95,65,43)")
+        add_box((-0.8, 0.65, 0.35), (0.16, 0.16, 0.7), 250, "rgb(95,65,43)")
+        add_box((0.8, 0.65, 0.35), (0.16, 0.16, 0.7), 250, "rgb(95,65,43)")
+        add_box((-2.9, -2.2, 0.42), (2.0, 0.8, 0.55), 1100, "rgb(47,111,142)")
+        add_box((-2.9, -2.65, 0.95), (2.0, 0.18, 0.95), 750, "rgb(42,94,121)")
+        add_box((3.7, 0.2, 0.9), (0.6, 2.4, 1.8), 1300, "rgb(150,118,74)")
+        add_box((0.0, 3.98, 1.8), (2.0, 0.05, 1.0), 900, "rgb(94,164,204)")
+
+        x = np.concatenate([item[0] for item in parts])
+        y = np.concatenate([item[1] for item in parts])
+        z = np.concatenate([item[2] for item in parts])
+        c = [color for item in parts for color in [item[3]] * len(item[0])]
+        return x, y, z, c
     elif scene == "ALS Terrain":
         n = 12000
         x = rng.uniform(-100, 100, n)
         y = rng.uniform(-100, 100, n)
         z = 5 * np.sin(x / 18) + 4 * np.cos(y / 22) + rng.normal(0, 0.35, n)
-    c = (z - z.min()) / (z.max() - z.min() + 1e-9)
-    return x, y, z, c
+        c = (z - z.min()) / (z.max() - z.min() + 1e-9)
+        return x, y, z, c
 
 
 def cloud_figure(x: np.ndarray, y: np.ndarray, z: np.ndarray, c: np.ndarray | list[str], title: str, dark: bool = False) -> go.Figure:
     bg = "#05070b" if dark else "#ffffff"
     grid = "#1f2a3a" if dark else "#d8e1ec"
     tick = "#dbeafe" if dark else "#172033"
-    marker = dict(size=1.4, color=c, opacity=0.9, showscale=False)
+    marker = dict(size=2.0 if isinstance(c, list) else 1.4, color=c, opacity=0.92, showscale=False)
     if not (isinstance(c, list) and c and isinstance(c[0], str)):
         marker["colorscale"] = "Viridis"
     fig = go.Figure(
@@ -1247,7 +1296,14 @@ def cloud_figure(x: np.ndarray, y: np.ndarray, z: np.ndarray, c: np.ndarray | li
     )
     fig.update_layout(
         title=dict(text=title, font=dict(size=14, color=tick)),
-        scene=dict(xaxis=axis, yaxis=axis, zaxis=axis, bgcolor=bg),
+        scene=dict(
+            xaxis=axis,
+            yaxis=axis,
+            zaxis=axis,
+            bgcolor=bg,
+            aspectmode="data",
+            camera=dict(eye=dict(x=1.45, y=-1.65, z=1.05), center=dict(x=0, y=0, z=-0.1)),
+        ),
         paper_bgcolor=bg,
         plot_bgcolor=bg,
         font=dict(color=tick),
