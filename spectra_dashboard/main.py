@@ -734,8 +734,36 @@ def skipped_stage_keys(quality_mode: str | None = None) -> set[str]:
     return {"selection"} if quality_mode == "fast" else set()
 
 
+def running_on_streamlit_cloud() -> bool:
+    return bool(os.environ.get("STREAMLIT_SHARING") or os.environ.get("STREAMLIT_CLOUD"))
+
+
+def cloud_backend_notice() -> str:
+    return (
+        "The hosted Streamlit Cloud app runs in lightweight demo mode. "
+        "Full reconstruction stages such as Depth Estimation require Torch, Transformers, and model resources, "
+        "so they are kept for the local workstation version."
+    )
+
+
 def start_backend_job(mode: str, stage_keys: list[str] | None = None) -> None:
     if live_running():
+        return
+    if running_on_streamlit_cloud():
+        LIVE_STATUS.write_text(
+            json.dumps(
+                {
+                    "runner_pid": None,
+                    "mode": mode,
+                    "running": False,
+                    "current_stage": None,
+                    "last_message": "Cloud demo mode: full backend reconstruction is available on the local workstation.",
+                    "stages": {},
+                },
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
         return
     quality_mode = current_quality_mode()
     scene_profile = current_scene_profile()
@@ -1140,10 +1168,6 @@ def delete_staged_image(path: Path, preserve_outputs: bool = True) -> None:
     if not preserve_outputs:
         clear_outputs()
     log(f"Deleted staged image: {path.name}")
-
-
-def running_on_streamlit_cloud() -> bool:
-    return bool(os.environ.get("STREAMLIT_SHARING") or os.environ.get("STREAMLIT_CLOUD"))
 
 
 def missing_artifact_message(source: str, path: Path) -> str:
@@ -1626,8 +1650,11 @@ def render_compact_guide() -> None:
 def render_upload_console(metrics: dict[str, int], key_prefix: str = "main") -> None:
     live = load_live_status()
     is_live = live_running(live)
+    cloud_mode = running_on_streamlit_cloud()
     st.markdown("### Upload and run reconstruction")
     st.caption("This is the frontend entry point: uploaded files are staged into data/raw_phone and can immediately trigger the backend pipeline.")
+    if cloud_mode:
+        st.info(cloud_backend_notice())
     uploaded = st.file_uploader(
         "Upload scene images",
         type=UPLOAD_TYPES,
@@ -1691,7 +1718,7 @@ def render_upload_console(metrics: dict[str, int], key_prefix: str = "main") -> 
             st.session_state["ui_notice"] = f"Saved {count} image(s) into data/raw_phone. They are ready for backend processing."
             st.rerun()
     with col_c:
-        run_disabled = is_live
+        run_disabled = is_live or cloud_mode
         if st.button("Start backend", type="primary", disabled=run_disabled, use_container_width=True, key=f"{key_prefix}_run"):
             if uploaded_count:
                 count = save_uploads(uploaded)
@@ -1719,13 +1746,20 @@ def render_upload_console(metrics: dict[str, int], key_prefix: str = "main") -> 
     status_cols[3].metric("Depth maps", fmt_int(metrics["depth_maps"]))
 
     if uploaded_count:
-        st.info(f"{uploaded_count} new file(s) selected. Click Save to raw_phone or Start backend.")
+        message = f"{uploaded_count} new file(s) selected. Click Save to raw_phone."
+        if not cloud_mode:
+            message += " You can also start the backend."
+        st.info(message)
     elif is_live:
         st.info(f"Backend running: {live.get('last_message', 'Processing...')}")
     elif recommended_count:
-        st.success("A usable dataset is staged. You can run the backend from here or from the Pipeline page.")
+        st.success("A usable dataset is staged." if cloud_mode else "A usable dataset is staged. You can run the backend from here or from the Pipeline page.")
     elif has_staged_images:
-        st.warning(f"{metrics['raw_images']} image(s) are already staged in data/raw_phone. You can run them, but 8 or more overlapping images is recommended.")
+        st.warning(
+            f"{metrics['raw_images']} image(s) are already staged in data/raw_phone."
+            if cloud_mode
+            else f"{metrics['raw_images']} image(s) are already staged in data/raw_phone. You can run them, but 8 or more overlapping images is recommended."
+        )
     else:
         st.warning("No staged images found. Upload scene images here or place them in data/raw_phone before starting the backend.")
 
@@ -1844,7 +1878,10 @@ def render_dataset(metrics: dict[str, int]) -> None:
 def render_pipeline(metrics: dict[str, int]) -> None:
     live = load_live_status()
     is_live = live_running(live)
+    cloud_mode = running_on_streamlit_cloud()
     st.subheader("Pipeline control")
+    if cloud_mode:
+        st.info(cloud_backend_notice())
     selection_mode = st.radio(
         "Frame selection",
         ["Quality selection", "Fast direct"],
@@ -1880,9 +1917,9 @@ def render_pipeline(metrics: dict[str, int]) -> None:
         st.session_state["zoom_profile"] = zoom_profile
     run_cols = st.columns([1, 1, 1, 1, 2])
     with run_cols[0]:
-        run_remaining = st.button("Run remaining live", type="primary", use_container_width=True, disabled=is_live)
+        run_remaining = st.button("Run remaining live", type="primary", use_container_width=True, disabled=is_live or cloud_mode)
     with run_cols[1]:
-        run_all = st.button("Run full backend", use_container_width=True, disabled=is_live)
+        run_all = st.button("Run full backend", use_container_width=True, disabled=is_live or cloud_mode)
     with run_cols[2]:
         if st.button("Reset stage timings", use_container_width=True, disabled=is_live):
             st.session_state["stage_times"] = {}
@@ -1893,7 +1930,11 @@ def render_pipeline(metrics: dict[str, int]) -> None:
         if st.button("Stop backend", use_container_width=True, disabled=not is_live):
             stop_backend_from_ui(live)
     with run_cols[4]:
-        st.caption("Stages now run through a live backend runner. Streamlit polls status and log files while the backend works.")
+        st.caption(
+            "Cloud demo mode keeps backend runs local-only."
+            if cloud_mode
+            else "Stages now run through a live backend runner. Streamlit polls status and log files while the backend works."
+        )
 
     if run_remaining:
         if metrics["raw_images"] > 0:
@@ -1927,6 +1968,7 @@ def render_pipeline(metrics: dict[str, int]) -> None:
         with left:
             elapsed = st.session_state["stage_times"].get(stage.key)
             time_text = f" - {elapsed}s" if elapsed is not None else ""
+            stage_note = " Local workstation stage." if cloud_mode and stage.key not in {"selection", "prepare", "evaluation"} else ""
             st.markdown(
                 f"""
                 <div class="stage-row">
@@ -1935,14 +1977,14 @@ def render_pipeline(metrics: dict[str, int]) -> None:
                     <div class="stage-name">{stage.name}</div>
                     <div class="small-muted mono">{' '.join(stage_command(stage))}</div>
                   </div>
-                  <div class="stage-desc">{stage.description}{time_text}</div>
+                  <div class="stage-desc">{stage.description}{time_text}{stage_note}</div>
                   <div><span class="pill {status}">{status_text}</span></div>
                 </div>
                 """,
                 unsafe_allow_html=True,
             )
         with action:
-            if st.button("Run live", key=f"run_{stage.key}", use_container_width=True, disabled=is_live or stage.key in skipped_stage_keys()):
+            if st.button("Run live", key=f"run_{stage.key}", use_container_width=True, disabled=is_live or cloud_mode or stage.key in skipped_stage_keys()):
                 start_backend_job("selected", [stage.key])
                 time.sleep(0.4)
                 st.rerun()
@@ -2352,6 +2394,14 @@ def render_resources(metrics: dict[str, int]) -> None:
 def main() -> None:
     init_state()
     live = load_live_status()
+    if running_on_streamlit_cloud() and not live_running(live) and "failed" in str(live.get("last_message", "")).lower():
+        live = {
+            "running": False,
+            "current_stage": None,
+            "last_message": "Cloud demo mode: full backend reconstruction is available on the local workstation.",
+            "stages": {},
+        }
+        LIVE_STATUS.write_text(json.dumps(live, indent=2), encoding="utf-8")
     if live:
         sync_stage_times_from_live(live)
     if st.session_state["auto_refresh"] or live_running(live):
